@@ -1,0 +1,254 @@
+:root {
+  --primary-color: #0e3e72;
+  --secondary-color: #ffffff;
+  --accent-color: #f9f9f9;
+  --font-primary: 'Poppins', sans-serif;
+}
+
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--accent-color);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+.profile-header {
+  text-align: center;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 2em 1em;
+}
+
+.profile-header img {
+  width: 150px;
+  height: 150px;
+  
+  margin-bottom: 1em;
+}
+
+.profile-header h1 {
+  font-size: 2.5em;
+}
+
+.tagline {
+  font-size: 1.2em;
+  margin-top: 0.5em;
+}
+
+/* Navigation Styling */
+.main-nav {
+  background: var(--primary-color);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  padding: 1em;
+}
+
+.main-nav ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Main Container & Sections */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2em;
+}
+
+.aboutme {
+  margin-bottom: 2em;
+}
+
+.aboutme h2 {
+  margin-bottom: 1em;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.75em 1.5em;
+  margin: 1em 0.5em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-size: 1em;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Footer Styling */
+footer {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 1em 0.5em;
+}
+
+footer p {
+  margin-bottom: 0.5em;
+}
+
+footer a.fa {
+  padding: 0.5em;
+  font-size: 1.5em;
+  width: 2.5em;
+  text-align: center;
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
+}
+
+footer a.fa:hover {
+  color: #ddd;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+  }
+  .container {
+    padding: 3em;
+  }
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-title {
+    font-size: 1.4em;
+    margin: 0 0 10px 0;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.card-description {
+    font-size: 1.2em;
+    color: #666;
+    margin: 0 0 10px 0;
+    display: inline-block;
+}
+
+#skills,#services,#projects {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;;
+  }
+  
+#skills h2,#services h2,#projects h2 {
+    display: inline-block;
+    text-align: center;
+    font-size: 2em;
+  }
+.languages img{
+    width: 120px;
+    height: 120px;
+    border-radius: 25%;
+    margin: 60px;
+    
+}
+.languages {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    flex-wrap: wrap; /* Allows wrapping to new lines */
+    gap: 20px; /* Space between items */
+  }
+  
+  .lang {
+    display: flex;
+    flex-direction: column; /* Stacks image and text */
+    align-items: center; /* Centers text under image */
+  }
+  
+  .lang img {
+    width: 80px; /* Adjust size as needed */
+    height: auto;}
+#project {
+    display: flex;
+    align-items: center; /* Aligns video and text */
+    gap: 20px; /* Space between video and text */
+    margin-bottom: 40px; /* Space between projects */
+    }
+
+#project video {
+    width: 300px;
+    height: auto;
+    border: 5px solid #0e3e72;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    margin-left: 20px;
+    }
+
+#project p {
+    text-align: left; /* Aligns text properly */
+    font-size: 1.4em;
+    line-height: 1.5;
+    }
+
+  .lang p {
+    margin-top: 5px;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.card, .left-card {
+    background-color: whitesmoke;
+    width: 40%;
+    min-width:min-content;
+    max-width: 300px; /* Limit card width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.left-card {
+    margin-left: 10%;
+}
+#about p{
+    text-align: center;
+
+}
