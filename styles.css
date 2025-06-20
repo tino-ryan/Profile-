@@ -176,6 +176,7 @@ body.light-mode .hamburger-icon {
   color: var(--primary-color); /* Dark icon for light background */
 }
 
+
 body.dark-mode .hamburger-icon {
   color: white; /* Light icon for dark background */
 }
@@ -185,6 +186,7 @@ body.dark-mode .hamburger-icon {
     display: none;
   }
 }
+
 
 
 .sidebar {
@@ -219,15 +221,13 @@ body.dark-mode .hamburger-icon {
 /* ------------------------------------
    Skills Section - Horizontal Cards
 ------------------------------------ */
-/* ------------------------------------
-   Skills Section - Horizontal Cards
------------------------------------- */
-#skills {
+.skills {
   background-color: white;
   padding: 4rem 2rem;
   text-align: center;
   overflow: hidden;
 }
+
 .inline-icon {
   width: 20px;
   height: 20px;
@@ -236,9 +236,7 @@ body.dark-mode .hamburger-icon {
   filter: grayscale(30%);
 }
 
-
-
-#skills h3{
+#skills h3 {
   font-weight: 600;
   font-size: 2em;
 }
@@ -277,41 +275,38 @@ body.dark-mode .hamburger-icon {
   opacity: 1;
   transform: translateY(0);
 }
+
 .skill-card p {
   color: #444;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
+
 .skill-card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow:
     0 16px 32px rgba(0, 0, 0, 0.2),
     0 8px 16px rgba(0, 0, 0, 0.1);
 }
-/* Custom pastel backgrounds + matching header colors */
-.skill-card-1 { background-color: #f8f5fb; } /* Light purple */
+
+/* Pastel Backgrounds */
+.skill-card-1 { background-color: #f8f5fb; }
 .skill-card-1 h3, .skill-card-1 .level { color: #a07cc5; }
 
-.skill-card-2 { background-color: #f1f5fd; } /* Light blue */
+.skill-card-2 { background-color: #f1f5fd; }
 .skill-card-2 h3, .skill-card-2 .level { color: #3f78e0; }
 
-.skill-card-3 { background-color: #f5faf7; } /* Light green */
+.skill-card-3 { background-color: #f5faf7; }
 .skill-card-3 h3, .skill-card-3 .level { color: #7cb798; }
 
-.skill-card-4 { background-color: #fcf4f6; } /* Light pink */
+.skill-card-4 { background-color: #fcf4f6; }
 .skill-card-4 h3, .skill-card-4 .level { color: #d16b86; }
 
-.skill-card-5 { background-color: #fdfaf2; } /* Cream */
+.skill-card-5 { background-color: #fdfaf2; }
 .skill-card-5 h3, .skill-card-5 .level { color: #dcae41; }
 
-
-
-.skill-card p {
-  font-size: 1.05rem;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
-
-/* Tools Section */
+/* Tools */
 .tools {
   list-style: none;
   display: flex;
@@ -360,11 +355,25 @@ figcaption {
   color: #777;
 }
 
-/* Responsive Tweaks */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+  .skills-scroll {
+    flex-direction: row;       /* Keep horizontal scrolling */
+    overflow-x: auto;          /* Enable horizontal scroll */
+    padding: 1rem 5vw;
+    gap: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .skill-card {
+    flex: 0 0 auto;            /* Prevent wrapping */
+    width: 80vw;
+    max-width: 90vw;
+    margin: 0;
     padding: 1.5rem;
   }
+
+
 
   .skill-card h3 {
     font-size: 1.5rem;
@@ -387,6 +396,27 @@ figcaption {
     height: 50px;
   }
 }
+
+/* Dot Indicators */
+.skills-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skills-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+}
+
+.skills-dots .dot.active {
+  background-color: #333;
+}
+
 
 
 
