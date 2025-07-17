@@ -443,7 +443,6 @@ figcaption {
 }*/
 .projects-section {
   padding: 4rem 2rem;
-  background-color: var(--accent-color);
 }
 
 .projects-header {
@@ -571,7 +570,13 @@ figcaption {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-
+#restapp{
+  background-color: #F1F8E9;
+}
+#restapp h3{
+  color:#2E7D32;
+  font-weight: 600;
+}
 
 
 
