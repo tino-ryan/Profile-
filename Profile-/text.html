@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Comic Timeline Quest</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescop&amp;family=Bangers&amp;display=swap" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescop&amp;family=Bangers&amp;display=swap');
+
+    :root{
+        --red:#E63946;--yellow:#FFD700;--green:#06D6A0;--blue:#457B9D;--brown:#8D6A4A;
+        --bg:#F5E6CC;--halftone:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><circle cx="2" cy="2" r="1" fill="%23000" opacity="0.07"/></svg>');
+        --border:5px solid #000;--shadow:8px 8px 0 #000;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+        background:var(--bg);font-family:'Annie Use Your Telescope',cursive;color:#000;
+        overflow-x:hidden;padding:20px 0;
+    }
+    h1{
+        text-align:center;font-family:'Bangers',cursive;font-size:3.5rem;color:var(--red);
+        text-shadow:4px 4px 0 #000;letter-spacing:3px;margin:30px 0;
+    }
+    .timeline-wrapper{
+        overflow-x:auto;padding:80px 40px 60px;position:relative;scroll-behavior:smooth;
+    }
+    .timeline{
+        position:relative;height:720px;min-width:4600px;
+    }
+    .time-axis{
+        position:absolute;bottom:140px;left:0;right:0;height:8px;background:#000;
+        box-shadow:0 4px 0 #fff,0 -4px 0 #fff;
+    }
+    .stamp{
+        position:absolute;bottom:100px;transform:translateX(-50%);
+        font-family:'Bangers',cursive;font-size:1.3rem;color:#000;
+        white-space:nowrap;
+    }
+    .lane{
+        position:absolute;width:100%;pointer-events:none;
+    }
+    .lane-1{top:80px;}
+    .lane-2{top:340px;}
+    .bubble{
+        position:absolute;background:white;border:var(--border);padding:18px 22px;
+        box-shadow:var(--shadow);pointer-events:all;cursor:pointer;
+        background:var(--halftone),white;transform-origin:bottom left;
+        transition:transform .4s cubic-bezier(.175,.885,.32,1.5);
+        max-width:420px;min-height:110px;
+    }
+    .bubble::before{
+        content:'';position:absolute;width:0;height:0;border:22px solid transparent;
+        z-index:-1;
+    }
+    .tail-down::before{top:-40px;left:40px;border-bottom-color:#000;}
+    .tail-up::before{bottom:-40px;left:50px;border-top-color:#000;}
+    .bubble:hover{transform:scale(1.04) translateY(-4px);}
+    .bubble.active{
+        transform:scale(1.35) translateY(-40px);z-index:100;
+        border:7px solid var(--red)!important;
+        box-shadow:12px 12px 0 var(--red),var(--shadow);
+    }
+    .title{
+        font-family:'Bangers',cursive;font-size:1.8rem;letter-spacing:1.5px;
+        text-transform:uppercase;margin-bottom:6px;
+    }
+    .date{font-size:1.1rem;opacity:.85;margin-bottom:8px;font-style:italic;}
+    .short{font-size:1.05rem;line-height:1.4;}
+    .full{display:none;font-size:1rem;line-height:1.5;margin-top:10px;}
+    .active .full{display:block;}
+    .active .short{display:none;}
+    .yellow .title{color:var(--yellow);text-shadow:2px 2px 0 #000;}
+    .green .title{color:var(--green);text-shadow:2px 2px 0 #000;}
+    .blue .title{color:var(--blue);text-shadow:2px 2px 0 #000;}
+    .brown .title{color:var(--brown);text-shadow:2px 2px 0 #fff;}
+    .swoosh{
+        position:absolute;font-family:'Bangers',cursive;font-size:1.6rem;
+        background:var(--red);color:#fff;padding:10px 22px;border:4px solid #000;
+        border-radius:50px;box-shadow:var(--shadow);pointer-events:none;
+        animation:pulse 1.8s infinite;white-space:nowrap;z-index:200;
+    }
+    .swoosh::after{
+        content:'';position:absolute;top:50%;left:-18px;
+        width:30px;height:20px;background:var(--red);border:4px solid #000;
+        border-left:none;border-top:none;transform:translateY(-50%) rotate(-45deg);
+        border-radius:0 0 15px 0;
+    }
+    @keyframes pulse{
+        0%,100%{transform:scale(1) rotate(-2deg);}
+        50%{transform:scale(1.12) rotate(2deg);}
+    }
+    .scroll-arrow{
+        position:absolute;top:50%;right:20px;transform:translateY(-50%);
+        font-size:3rem;color:var(--red);animation:bounce 2s infinite;
+    }
+    @keyframes bounce{
+        0%,100%{transform:translateY(-50%) translateX(0);}
+        50%{transform:translateY(-50%) translateX(15px);}
+    }
+</style>
+</head>
+<body>
+
+<h1>PROFESSIONAL QUESTS</h1>
+
+<div class="timeline-wrapper" id="timeline">
+    <div class="timeline">
+        <div class="time-axis"></div>
+
+        <!-- Lanes -->
+        <div class="lane lane-1" id="lane1"></div>
+        <div class="lane lane-2" id="lane2"></div>
+
+        <!-- Swoosh Hint -->
+        <div class="swoosh" id="hint">CLICK ME!</div>
+
+        <!-- Scroll Arrow -->
+        <div class="scroll-arrow">SCROLL</div>
+    </div>
+</div>
+
+<h1>ACADEMIC ADVENTURES</h1>
+
+<script>
+/* ---------- DATA ---------- */
+const items = [
+    {title:"JUNIOR SOFTWARE DEVELOPER",org:"IAT Fusion, Johannesburg",date:"Aug 2024 – Present",
+     start:"2024-08",end:"present",lane:0,color:"yellow",
+     short:"Full-stack .NET & SQL Server apps, Agile SCRUM, CI/CD",
+     full:`• Architect and develop production-grade full-stack apps using C#/.NET and SQL Server (SSMS)<br>
+           • Collaborate in Agile SCRUM teams – user-centered, performant solutions<br>
+           • Design REST APIs, authentication, query optimisation<br>
+           • Debug, code-review, maintain CI/CD pipelines<br>
+           • OOP & design patterns for scalable enterprise code`},
+
+    {title:"PRIVATE TUTOR",org:"Newtons Academy, Johannesburg",date:"2024 – Present",
+     start:"2024-01",end:"present",lane:0,color:"blue",
+     short:"Maths, Physics & IT for high-schoolers",
+     full:"Deliver personalised tutoring in Mathematics, Physical Sciences and IT. Create tailored materials that boost comprehension and exam results."},
+
+    {title:"BSc COMPUTER SCIENCE",org:"University of the Witwatersrand",date:"2022 – 2025",
+     start:"2022-09",end:"2025-06",lane:0,color:"green",
+     short:"Machine Learning, Software Design, Parallel Computing…",
+     full:`<strong>Key Courses:</strong> Machine Learning, Software Design, Parallel Computing, Mobile Computing, Database Systems, Computer Networks<br>
+           <strong>Technical Stack:</strong> Python, Java, C/C++, C#, React, React Native, SQL, Node.js, Express, Firebase, Azure<br>
+           <strong>Supporting:</strong> Mathematics I & II, Economics I & II`},
+
+    {title:"ASSISTANT TUTOR",org:"Gozho Maths Clinic, Johannesburg",date:"2021 – 2023",
+     start:"2021-09",end:"2023-08",lane:0,color:"brown",
+     short:"Group sessions & lesson plans",
+     full:"Facilitated group learning, developed lesson plans, mentored students in mathematical problem-solving."},
+
+    {title:"NATIONAL SENIOR CERTIFICATE",org:"Masibambane College",date:"2021",
+     start:"2021-01",end:"2021-12",lane:0,color:"brown",
+     short:"Matric – 5 Distinctions",
+     full:"5 Distinctions including Mathematics (90%), Physical Sciences (87%), Life Sciences (90%)."}
+];
+
+/* ---------- SETTINGS ---------- */
+const PX_PER_MONTH = 30;
+const START_YEAR = 2021;
+const LANES = 2;
+
+/* ---------- HELPERS ---------- */
+function toMonths(d){
+    if(d==='present'){
+        const n=new Date();return (n.getFullYear()-START_YEAR)*12+n.getMonth();
+    }
+    const [y,m]=d.split('-').map(Number);
+    return (y-START_YEAR)*12+(m-1);
+}
+function assignLanes(arr){
+    const occ=Array.from({length:LANES},()=>[]);
+    arr.forEach(it=>{
+        const s=toMonths(it.start), e=toMonths(it.end);
+        let lane=0;
+        for(let l=0;l<LANES;l++){
+            if(!occ[l].some(([os,oe])=>!(e<=os||s>=oe))){lane=l;break;}
+        }
+        it.lane=lane+1;
+        occ[lane].push([s,e]);
+    });
+}
+assignLanes(items);
+
+/* ---------- TIME STAMPS ---------- */
+function addStamps(){
+    const container=document.querySelector('.timeline');
+    for(let y=START_YEAR;y<=2026;y++){
+        for(let m=1;m<=12;m+=6){
+            const months=(y-START_YEAR)*12+(m-1);
+            const x=months*PX_PER_MONTH;
+            const label=m===1?`${y}`:`${y}-${String(m).padStart(2,'0')}`;
+            const stamp=document.createElement('div');
+            stamp.className='stamp';
+            stamp.style.left=`${x}px`;
+            stamp.textContent=label;
+            container.appendChild(stamp);
+        }
+    }
+}
+addStamps();
+
+/* ---------- RENDER BUBBLES ---------- */
+items.forEach((it,i)=>{
+    const startPx=toMonths(it.start)*PX_PER_MONTH;
+    const dur=toMonths(it.end)-toMonths(it.start);
+    const width=Math.max(dur*PX_PER_MONTH-90,180);
+
+    const bub=document.createElement('div');
+    bub.className=`bubble ${it.color} tail-${it.lane===1?'down':'up'}`;
+    bub.style.left=`${startPx+50}px`;
+    bub.style.width=`${width}px`;
+
+    bub.innerHTML=`
+        <div class="title">${it.title}</div>
+        <div class="date">${it.org} • ${it.date}</div>
+        <div class="short">${it.short}</div>
+        <div class="full">${it.full}</div>
+    `;
+
+    bub.onclick=function(){
+        document.querySelectorAll('.bubble').forEach(b=>b.classList.remove('active'));
+        this.classList.add('active');
+        const cont=document.getElementById('timeline');
+        const center=this.offsetLeft - cont.clientWidth/2 + this.offsetWidth/2;
+        cont.scrollTo({left:center,behavior:'smooth'});
+        const hint=document.getElementById('hint');
+        if(hint)hint.style.opacity='0';
+    };
+
+    document.getElementById(`lane${it.lane}`).appendChild(bub);
+
+    // position hint on first bubble
+    if(i===0){
+        setTimeout(()=>{
+            const hint=document.getElementById('hint');
+            const r=bub.getBoundingClientRect();
+            const c=document.querySelector('.timeline-wrapper').getBoundingClientRect();
+            hint.style.left=`${r.left-c.left + r.width/2 - 80}px`;
+            hint.style.top=`${r.top-c.top - 70}px`;
+        },150);
+    }
+});
+
+/* ---------- HIDE HINT ON ANY CLICK ---------- */
+document.addEventListener('click',function hide(e){
+    const h=document.getElementById('hint');
+    if(h && !e.target.closest('.swoosh')){
+        h.style.opacity='0';
+        setTimeout(()=>h.remove(),600);
+        document.removeEventListener('click',hide);
+    }
+});
+</script>
+</body>
+</html>

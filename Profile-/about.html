@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tinotenda Gozho - Full Stack Developer & Data Scientist</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="styles2.css" />
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="comic-header">
+      <div class="header-content">
+        <div class="header-logo">TG</div>
+        <nav class="header-nav" id="mainNav">
+          <a href="#home" class="nav-btn">HOME</a>
+          <a href="#about" class="nav-btn">ABOUT</a>
+          <a href="#services" class="nav-btn">SERVICES</a>
+          <a href="#journey" class="nav-btn">JOURNEY</a>
+          <a href="#skills" class="nav-btn">SKILLS</a>
+          <a href="#projects" class="nav-btn">PROJECTS</a>
+          <a href="#contact" class="nav-btn">CONTACT</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Comic Book Pages Container -->
+    <div class="comic-book" id="comicBook">
+      <!-- HERO SECTION -->
+      <section id="home" class="comic-page comic-cover">
+        <div class="cover-city-bg"></div>
+        <div class="cover-overlay"></div>
+        <div class="cover-halftone"></div>
+
+        <!-- Language logos thrown across the cover + twinkling stars -->
+        <div class="cover-langs" aria-hidden="true">
+          <img src="images/html.png" class="lang-float lang-1" alt="" />
+          <img src="images/css.png" class="lang-float lang-2" alt="" />
+          <img src="images/cpp.png" class="lang-float lang-3" alt="" />
+          <img src="images/express.png" class="lang-float lang-4" alt="" />
+          <img src="images/android.png" class="lang-float lang-5" alt="" />
+          <i class="fas fa-star star star-1"></i>
+          <i class="fas fa-star star star-2"></i>
+          <i class="fas fa-star star star-3"></i>
+          <i class="fas fa-star star star-4"></i>
+          <i class="fas fa-star star star-5"></i>
+          <i class="fas fa-star star star-6"></i>
+        </div>
+
+        <div class="cover-main">
+          <div class="hero-name-container">
+            <h1 class="hero-name">TINOTENDA</h1>
+            <h1 class="hero-name hero-name-last">GOZHO</h1>
+          </div>
+
+          <div class="cover-banner">
+            <div class="banner-burst left">POW!</div>
+            <div class="banner-content">
+              <span class="banner-text"
+                >SOFTWARE DEVELOPER • DATA SCIENTIST • TUTOR</span
+              >
+            </div>
+            <div class="banner-burst right">ZAP!</div>
+          </div>
+
+          <!-- CONTACT CTA -->
+          <div class="hero-contact-box">
+            <div class="contact-burst">LET'S CONNECT!</div>
+            <button class="hero-contact-btn" id="heroContactBtn">
+              <i class="fas fa-envelope"></i>
+              <span>GET IN TOUCH</span>
+            </button>
+          </div>
+
+          <div class="cover-stats">
+            <div class="stat-badge">
+              <i class="fas fa-bolt stat-icon"></i>
+              <div class="stat-text">4+ YEARS</div>
+            </div>
+            <div class="stat-badge">
+              <i class="fas fa-rocket stat-icon"></i>
+              <div class="stat-text">10+ PROJECTS</div>
+            </div>
+            <div class="stat-badge">
+              <i class="fas fa-graduation-cap stat-icon"></i>
+              <div class="stat-text">BSc CS</div>
+            </div>
+            <div class="stat-badge">
+              <i class="fas fa-briefcase stat-icon"></i>
+              <div class="stat-text">JUNIOR DEV</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cover-bottom-bar">
+          <div class="creator-credits">
+            JOHANNESBURG • SOFTWARE DEV • AVAILABLE FOR OPPORTUNITIES
+          </div>
+          <div class="social-icons-cover">
+            <a
+              href="https://github.com/tino-ryan"
+              target="_blank"
+              aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/tinogozho"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="mailto:tinogozho2@gmail.com"
+              class="social-icon-link"
+              aria-label="Email"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a
+              href="tel:+27686567064"
+              class="social-icon-link"
+              aria-label="Phone"
+              ><i class="fas fa-phone"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/tino_r.y.a.n/"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="action-word action-1">BOOM!</div>
+        <div class="action-word action-2">WHAM!</div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content">
+          <div class="page-header">
+            <h2 class="section-title">HERO FILE</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Top Secret • Clearance Level: MAX</p>
+          </div>
+
+          <!-- Bio -->
+          <!-- ========================================
+     ABOUT SECTION — DROP INTO index.html
+     Replace the existing <section id="about"> block
+======================================== -->
+          <section id="about" class="comic-page">
+            <div class="page-border"></div>
+            <div class="page-content">
+              <div class="page-header">
+                <h2 class="section-title">HERO FILE</h2>
+                <div class="title-underline"></div>
+                <p class="section-subtitle">
+                  Top Secret · Clearance Level: MAX
+                </p>
+              </div>
+
+              <div class="about-layout">
+                <!-- LEFT: DOSSIER CARD -->
+                <div class="dossier-card">
+                  <div class="dossier-header">
+                    <span class="dossier-id">AGENT #001</span>
+                    <span class="dossier-status">ACTIVE</span>
+                  </div>
+
+                  <div class="dossier-portrait">
+                    <span>TG</span>
+                  </div>
+
+                  <h3 class="dossier-name">Tinotenda Gozho</h3>
+                  <p class="dossier-role">
+                    Software Developer · Data Scientist · Educator
+                  </p>
+                  <p class="dossier-org">VIATAP · Johannesburg, ZA</p>
+
+                  <div class="dossier-chips">
+                    <span class="chip chip-green">BSc CS Graduate</span>
+                    <span class="chip chip-gold">@ VIATAP</span>
+                    <span class="chip chip-red">Available</span>
+                    <span class="chip">Wits University</span>
+                    <span class="chip">Johannesburg</span>
+                  </div>
+
+                  <div class="dossier-stats">
+                    <div class="dstat">
+                      <span class="dstat-num">4+</span>
+                      <span class="dstat-lbl">Years Coding</span>
+                    </div>
+                    <div class="dstat">
+                      <span class="dstat-num">10+</span>
+                      <span class="dstat-lbl">Projects</span>
+                    </div>
+                    <div class="dstat">
+                      <span class="dstat-num">5</span>
+                      <span class="dstat-lbl">Matric Dists.</span>
+                    </div>
+                    <div class="dstat">
+                      <span class="dstat-num">90%</span>
+                      <span class="dstat-lbl">Matric Maths</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- RIGHT: STORY + PANELS -->
+                <div class="about-story">
+                  <!-- Speech bubble bio -->
+                  <div class="speech-box">
+                    <p class="speech-text">
+                      I'm a
+                      <strong
+                        >Software Developer & BSc Computer Science graduate from
+                        the University of the Witwatersrand</strong
+                      >, currently building enterprise-grade systems at
+                      <strong>VIATAP</strong> in Johannesburg. My stack spans
+                      <strong>C#/.NET</strong>, <strong>React</strong>,
+                      <strong>SQL Server</strong>, and
+                      <strong>REST API design</strong> — all battle-tested in
+                      production Agile environments.
+                    </p>
+                  </div>
+
+                  <div class="speech-box speech-box--offset">
+                    <p class="speech-text">
+                      At Wits I built a foundation most devs don't have —
+                      <strong
+                        >Algorithm Analysis, Advanced Algorithms, Software
+                        Design, Computer Graphics & Visualisation, Parallel
+                        Computing (OpenMP/MPI), Computer Networks, and Mobile
+                        Computing</strong
+                      >
+                      — plus a full <strong>Mathematics major</strong>
+                      covering Multivariable Calculus, Linear Algebra, Analysis,
+                      and Statistics. I also teach Maths, Physics & IT, which
+                      means I explain hard things simply.
+                    </p>
+                  </div>
+
+                  <!-- 6 ability mini-panels -->
+                  <div class="ability-panels">
+                    <div class="ability-panel">
+                      <span class="ap-num">01</span>
+                      <i class="fas fa-laptop-code ap-icon"></i>
+                      <span class="ap-label">Full-Stack<br />Dev</span>
+                    </div>
+                    <div class="ability-panel">
+                      <span class="ap-num">02</span>
+                      <i class="fas fa-brain ap-icon"></i>
+                      <span class="ap-label">ML &amp;<br />Data Science</span>
+                    </div>
+                    <div class="ability-panel">
+                      <span class="ap-num">03</span>
+                      <i class="fas fa-bolt ap-icon"></i>
+                      <span class="ap-label">Parallel<br />Computing</span>
+                    </div>
+                    <div class="ability-panel">
+                      <span class="ap-num">04</span>
+                      <i class="fas fa-shapes ap-icon"></i>
+                      <span class="ap-label"
+                        >Graphics &amp;<br />Visualisation</span
+                      >
+                    </div>
+                    <div class="ability-panel">
+                      <span class="ap-num">05</span>
+                      <i class="fas fa-square-root-alt ap-icon"></i>
+                      <span class="ap-label">Maths<br />Major</span>
+                    </div>
+                    <div class="ability-panel">
+                      <span class="ap-num">06</span>
+                      <i class="fas fa-chalkboard-teacher ap-icon"></i>
+                      <span class="ap-label">Educator &amp;<br />Mentor</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="page-number">PAGE 02</div>
+            </div>
+          </section>
+
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section id="services" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content">
+          <div class="page-header">
+            <h2 class="section-title">LEGENDARY SERVICES</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Unlock epic solutions for your quest</p>
+          </div>
+
+          <div class="services-grid">
+            <!-- Development Service -->
+            <div class="service-card">
+              <div class="service-explosion">KAPOW!</div>
+              <div class="service-icon-wrapper">
+                <i class="fas fa-laptop-code service-icon"></i>
+                <div class="icon-glow"></div>
+              </div>
+              <h3 class="service-title">WEB DEVELOPMENT</h3>
+              <p class="service-tagline">"Build it fast. Build it right."</p>
+              <ul class="service-list">
+                <li>
+                  <i class="fas fa-check-circle"></i> SOFTWARE Applications
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> E-commerce Platforms
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> REST API Development
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Database Architecture
+                </li>
+              </ul>
+              <div class="service-badge">C# • REACT • SQL</div>
+              <button class="service-btn" data-service="development">
+                <span>HIRE ME</span>
+                <i class="fas fa-bolt"></i>
+              </button>
+            </div>
+
+            <!-- Mobile Development -->
+            <div class="service-card">
+              <div class="service-explosion">BOOM!</div>
+              <div class="service-icon-wrapper">
+                <i class="fas fa-mobile-alt service-icon"></i>
+                <div class="icon-glow"></div>
+              </div>
+              <h3 class="service-title">MOBILE APPS</h3>
+              <p class="service-tagline">"Power in your pocket"</p>
+              <ul class="service-list">
+                <li><i class="fas fa-check-circle"></i> React Native Apps</li>
+                <li><i class="fas fa-check-circle"></i> iOS & Android</li>
+                <li>
+                  <i class="fas fa-check-circle"></i> Firebase Integration
+                </li>
+                <li><i class="fas fa-check-circle"></i> Real-time Features</li>
+              </ul>
+              <div class="service-badge">REACT NATIVE</div>
+              <button class="service-btn" data-service="mobile">
+                <span>HIRE ME</span>
+                <i class="fas fa-rocket"></i>
+              </button>
+            </div>
+
+            <!-- Tutoring Service -->
+            <div class="service-card">
+              <div class="service-explosion">ZAP!</div>
+              <div class="service-icon-wrapper">
+                <i class="fas fa-chalkboard-teacher service-icon"></i>
+                <div class="icon-glow"></div>
+              </div>
+              <h3 class="service-title">TUTORING</h3>
+              <p class="service-tagline">"Knowledge is power"</p>
+              <ul class="service-list">
+                <li><i class="fas fa-check-circle"></i> Mathematics</li>
+                <li><i class="fas fa-check-circle"></i> Physical Sciences</li>
+                <li><i class="fas fa-check-circle"></i> IT & Programming</li>
+                <li><i class="fas fa-check-circle"></i> High School Level</li>
+              </ul>
+              <div class="service-badge">EXPERT TUTOR</div>
+              <button class="service-btn" data-service="tutoring">
+                <span>BOOK NOW</span>
+                <i class="fas fa-graduation-cap"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="page-number">PAGE 03</div>
+        </div>
+      </section>
+
+      <!-- TIMELINE SECTION -->
+      <section id="journey" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content">
+          <div class="page-header">
+            <h2 class="section-title">THE ADVENTURE TIMELINE</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">
+              Scroll horizontally & click bubbles to expand
+            </p>
+          </div>
+
+          <div class="timeline-wrapper">
+            <div class="timeline-scroll-hint">
+              <i class="fas fa-arrows-alt-h"></i>
+              <span>SCROLL HORIZONTALLY</span>
+              <i class="fas fa-hand-pointer"></i>
+              <span>CLICK TO EXPAND</span>
+            </div>
+
+            <div class="timeline">
+              <div class="time-axis"></div>
+              <div class="lane lane-1" id="lane1"></div>
+              <div class="lane lane-2" id="lane2"></div>
+              <div class="swoosh" id="hint">CLICK ME!</div>
+            </div>
+          </div>
+
+          <div class="page-number">PAGE 04</div>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content">
+          <div class="page-header">
+            <h2 class="section-title">POWER-UPS & ABILITIES</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Core competencies & technologies</p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Frontend -->
+            <div class="skill-card" style="--accent-color: #ffd700">
+              <div class="skill-header">
+                <div class="skill-icon" style="background: #ffd700">
+                  <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="skill-title">FRONTEND</h3>
+              </div>
+              <p class="skill-description">
+                Interactive user interfaces with modern frameworks
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">React Native</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">HTML/CSS</span>
+                <span class="skill-tag">Tailwind</span>
+              </div>
+            </div>
+
+            <!-- Backend -->
+            <div class="skill-card" style="--accent-color: #ff6b6b">
+              <div class="skill-header">
+                <div class="skill-icon" style="background: #ff6b6b">
+                  <i class="fas fa-server"></i>
+                </div>
+                <h3 class="skill-title">BACKEND</h3>
+              </div>
+              <p class="skill-description">
+                Server-side logic and RESTful APIs
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">C# .NET</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">PHP</span>
+              </div>
+            </div>
+
+            <!-- Machine Learning -->
+            <div class="skill-card" style="--accent-color: #ff4757">
+              <div class="skill-header">
+                <div class="skill-icon" style="background: #ff4757">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="skill-title">MACHINE LEARNING</h3>
+              </div>
+              <p class="skill-description">AI models and data science</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Classification</span>
+                <span class="skill-tag">Regression</span>
+                <span class="skill-tag">Clustering</span>
+                <span class="skill-tag">Neural Networks</span>
+              </div>
+            </div>
+
+            <!-- Parallel Computing -->
+            <div class="skill-card" style="--accent-color: #45b7d1">
+              <div class="skill-header">
+                <div class="skill-icon" style="background: #45b7d1">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="skill-title">PARALLEL COMPUTING</h3>
+              </div>
+              <p class="skill-description">
+                High-performance parallel programs
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">OpenMP</span>
+                <span class="skill-tag">MPI</span>
+                <span class="skill-tag">C/C++</span>
+                <span class="skill-tag">Optimization</span>
+              </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="skill-card" style="--accent-color: #4ecdc4">
+              <div class="skill-header">
+                <div class="skill-icon" style="background: #4ecdc4">
+                  <i class="fas fa-database"></i>
+                </div>
+                <h3 class="skill-title">DATABASES</h3>
+              </div>
+              <p class="skill-description">
+                Data management and cloud services
+              </p>
+              <div class="skill-tags">
+                <span class="skill-tag">SQL Server</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Firebase</span>
+                <span class="skill-tag">Azure</span>
+              </div>
+            </div>
+
+            <!-- Dev Practices -->
+            <div class="skill-card" style="--accent-color: #f7b731">
+              <div class="skill-header">
+                <div class="skill-icon" style="background: #f7b731">
+                  <i class="fas fa-cogs"></i>
+                </div>
+                <h3 class="skill-title">DEV PRACTICES</h3>
+              </div>
+              <p class="skill-description">Modern development methodologies</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Agile/SCRUM</span>
+                <span class="skill-tag">Git/GitHub</span>
+                <span class="skill-tag">CI/CD</span>
+                <span class="skill-tag">OOP Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-number">PAGE 05</div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content">
+          <div class="page-header">
+            <h2 class="section-title">LEGENDARY QUESTS</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Featured project covers</p>
+          </div>
+
+          <div class="projects-grid">
+            <div class="project-cover">
+              <div
+                class="project-cover-bg"
+                style="background-image: url(&quot;rest.png&quot;)"
+              ></div>
+              <div class="project-cover-content">
+                <div class="project-issue">#001</div>
+                <h3 class="project-cover-title">RESTAURANT PLATFORM</h3>
+                <p class="project-cover-tagline">
+                  Real-time management meets live order tracking!
+                </p>
+                <div class="project-tech-badges">
+                  <span class="tech-badge">REACT</span>
+                  <span class="tech-badge">FIREBASE</span>
+                  <span class="tech-badge">NATIVE</span>
+                </div>
+                <a
+                  href="https://rest-platform-9c3cc.web.app/"
+                  target="_blank"
+                  class="project-cover-btn"
+                >
+                  READ NOW <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-cover">
+              <div
+                class="project-cover-bg"
+                style="background-image: url(&quot;welcome_bg.jpg&quot;)"
+              ></div>
+              <div class="project-cover-content">
+                <div class="project-issue">#002</div>
+                <h3 class="project-cover-title">MATCHDAY SPORTS</h3>
+                <p class="project-cover-tagline">
+                  SOFTWARE sports facility management on Azure!
+                </p>
+                <div class="project-tech-badges">
+                  <span class="tech-badge">REACT</span>
+                  <span class="tech-badge">NODE.JS</span>
+                  <span class="tech-badge">AZURE</span>
+                </div>
+                <a
+                  href="https://victorious-bush-007efa41e.6.azurestaticapps.net/"
+                  target="_blank"
+                  class="project-cover-btn"
+                >
+                  READ NOW <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-cover">
+              <div
+                class="project-cover-bg"
+                style="background-image: url(&quot;Geofinder.png&quot;)"
+              ></div>
+              <div class="project-cover-content">
+                <div class="project-issue">#003</div>
+                <h3 class="project-cover-title">GEOFINDER</h3>
+                <p class="project-cover-tagline">
+                  Interactive country explorer with live data!
+                </p>
+                <div class="project-tech-badges">
+                  <span class="tech-badge">REACT</span>
+                  <span class="tech-badge">REST API</span>
+                  <span class="tech-badge">JS</span>
+                </div>
+                <a
+                  href="https://tino-ryan.github.io/Geofinder/"
+                  target="_blank"
+                  class="project-cover-btn"
+                >
+                  READ NOW <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-number">PAGE 06</div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content contact-content">
+          <div class="page-header">
+            <h2 class="section-title">JOIN THE ADVENTURE</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">
+              Let's build something amazing together
+            </p>
+          </div>
+
+          <div class="contact-wrapper">
+            <div class="contact-buttons">
+              <a href="CV.pdf" target="_blank" class="cta-btn primary">
+                <i class="fas fa-download"></i>
+                <span>Download Resume</span>
+              </a>
+              <button class="cta-btn secondary" id="contactModalBtn">
+                <i class="fas fa-envelope"></i>
+                <span>Get In Touch</span>
+              </button>
+            </div>
+
+            <div class="contact-socials">
+              <a
+                href="https://github.com/tino-ryan"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tinogozho"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:tinogozho2@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+              </a>
+              <a href="tel:+27686567064" class="social-link">
+                <i class="fas fa-phone"></i>
+                <span>Phone</span>
+              </a>
+              <a
+                href="https://www.instagram.com/tino_r.y.a.n/"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="page-number">PAGE 07</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Contact Modal - ONLY FOR "GET IN TOUCH" -->
+    <div class="contact-modal" id="contactModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-burst">CONTACT INFO!</div>
+        <h2 class="modal-title">GET IN TOUCH</h2>
+        <div class="modal-contacts">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+              <span class="contact-value" id="emailValue"
+                >tinogozho2@gmail.com</span
+              >
+              <button class="copy-btn" data-copy="tinogozho2@gmail.com">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div class="contact-info">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value" id="phoneValue">+27 68 656 7064</span>
+              <button class="copy-btn" data-copy="+27686567064">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>I'll respond within 24 hours!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="burst-container" id="burstContainer"></div>
+
+    <footer class="comic-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Tinotenda Gozho. All rights reserved.</p>
+        <p class="footer-tagline">
+          SOFTWARE Developer • Data Scientist • Educator
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tinotenda Gozho - Full Stack Developer & Data Scientist</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="comic-header">
+      <div class="header-content">
+        <div class="header-logo">TG</div>
+        <nav class="header-nav" id="mainNav">
+          <a href="#home" class="nav-btn">HOME</a>
+          <a href="#about" class="nav-btn">ABOUT</a>
+          <a href="#abilities" class="nav-btn">ABILITIES</a>
+          <a href="#journey" class="nav-btn">JOURNEY</a>
+          <a href="#projects" class="nav-btn">PROJECTS</a>
+          <a href="#contact" class="nav-btn">CONTACT</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Comic Book Pages Container -->
+    <div class="comic-book" id="comicBook">
+      <!-- HERO SECTION -->
+      <section id="home" class="comic-page comic-cover">
+        <div class="cover-city-bg"></div>
+        <div class="cover-overlay"></div>
+        <div class="cover-halftone"></div>
+
+        <!-- Language logos thrown across the cover + twinkling stars -->
+        <div class="cover-langs" aria-hidden="true">
+          <img src="images/html.png" class="lang-float lang-1" alt="" />
+          <img src="images/css.png" class="lang-float lang-2" alt="" />
+          <img src="images/cpp.png" class="lang-float lang-3" alt="" />
+          <img src="images/express.png" class="lang-float lang-4" alt="" />
+          <img src="images/android.png" class="lang-float lang-5" alt="" />
+          <i class="fas fa-star star star-1"></i>
+          <i class="fas fa-star star star-2"></i>
+          <i class="fas fa-star star star-3"></i>
+          <i class="fas fa-star star star-4"></i>
+          <i class="fas fa-star star star-5"></i>
+          <i class="fas fa-star star star-6"></i>
+        </div>
+
+        <div class="cover-main">
+          <div class="hero-name-container">
+            <h1 class="hero-name">TINOTENDA</h1>
+            <h1 class="hero-name hero-name-last">GOZHO</h1>
+          </div>
+
+          <div class="cover-banner">
+            <div class="banner-burst left">POW!</div>
+            <div class="banner-content">
+              <span class="banner-text"
+                >SOFTWARE DEVELOPER • DATA SCIENTIST • TUTOR</span
+              >
+            </div>
+            <div class="banner-burst right">ZAP!</div>
+          </div>
+
+          <!-- CONTACT CTA -->
+          <div class="hero-contact-box">
+            <div class="contact-burst">LET'S CONNECT!</div>
+            <button class="hero-contact-btn" id="heroContactBtn">
+              <i class="fas fa-envelope"></i>
+              <span>GET IN TOUCH</span>
+            </button>
+          </div>
+
+          <div class="cover-stats">
+            <div class="stat-badge">
+              <i class="fas fa-bolt stat-icon"></i>
+              <div class="stat-text">4+ YEARS</div>
+            </div>
+            <div class="stat-badge">
+              <i class="fas fa-rocket stat-icon"></i>
+              <div class="stat-text">10+ PROJECTS</div>
+            </div>
+            <div class="stat-badge">
+              <i class="fas fa-graduation-cap stat-icon"></i>
+              <div class="stat-text">BSc CS</div>
+            </div>
+            <div class="stat-badge">
+              <i class="fas fa-briefcase stat-icon"></i>
+              <div class="stat-text">JUNIOR DEV</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cover-bottom-bar">
+          <div class="creator-credits">
+            JOHANNESBURG • SOFTWARE DEV • AVAILABLE FOR OPPORTUNITIES
+          </div>
+          <div class="social-icons-cover">
+            <a
+              href="https://github.com/tino-ryan"
+              target="_blank"
+              aria-label="GitHub"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/tino-gozho"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="mailto:tinogozho2@gmail.com"
+              class="social-icon-link"
+              aria-label="Email"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a
+              href="tel:+27686567064"
+              class="social-icon-link"
+              aria-label="Phone"
+              ><i class="fas fa-phone"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/tino_r.y.a.n/"
+              target="_blank"
+              aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="action-word action-1">BOOM!</div>
+        <div class="action-word action-2">WHAM!</div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="comic-page">
+        <div class="page-border"></div>
+
+        <!-- SVG torn-paper displacement filter -->
+        <svg class="torn-defs" aria-hidden="true">
+          <defs>
+            <filter id="torn-paper" x="-5%" y="-5%" width="110%" height="110%">
+              <feTurbulence
+                type="turbulence"
+                baseFrequency="0.022 0.058"
+                numOctaves="4"
+                seed="13"
+                result="noise"
+              />
+              <feDisplacementMap
+                in="SourceGraphic"
+                in2="noise"
+                scale="11"
+                xChannelSelector="R"
+                yChannelSelector="G"
+              />
+            </filter>
+          </defs>
+        </svg>
+
+        <div class="page-content">
+          <div class="page-header">
+            <h2 class="section-title">HERO FILE</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Top Secret • Clearance Level: MAX</p>
+          </div>
+
+          <div class="dossier">
+            <!-- TOP ROW: photo pin + identity & origin panels -->
+            <div class="dossier-top">
+              <div class="dossier-photo-col">
+                <div class="photo-pinned">
+                  <div class="staple staple-left"></div>
+                  <div class="staple staple-right"></div>
+                  <!-- Replace images/tino.jpg with your photo -->
+                  <img
+                    src="images/tino.jpg"
+                    alt="Tinotenda Gozho"
+                    class="subject-photo"
+                  />
+                  <div class="grad-banner">WITS GRADUATE</div>
+                  <p class="photo-caption">SUBJECT #001</p>
+                </div>
+                <div class="subject-badges">
+                  <span class="s-badge">JHB</span>
+                  <span class="s-badge">WITS CS</span>
+                  <span class="s-badge badge-active">ACTIVE</span>
+                </div>
+              </div>
+
+              <div class="dossier-panels-col">
+                <div class="dp">
+                  <div class="dp-header">
+                    <span class="dp-num">01</span>
+                    <span class="dp-label">THE IDENTITY</span>
+                  </div>
+                  <p class="dp-text">
+                    <strong>Tinotenda Gozho</strong> AKA
+                    <strong> Tino</strong> - is a Johannesburg-based Software
+                    Developer and Computer Science graduate from the
+                    <strong>University of the Witwatersrand</strong>, currently
+                    ranked the <strong>#1 university in Africa</strong>.
+                    Currently deployed at <strong>VIATAP</strong>, engineering
+                    production-grade enterprise systems across the full stack.
+                  </p>
+                </div>
+
+                <div class="dp">
+                  <div class="dp-header">
+                    <span class="dp-num">02</span>
+                    <span class="dp-label">THE ORIGIN</span>
+                  </div>
+                  <p class="dp-text">
+                    Wits-forged across
+                    <strong
+                      >Algorithm Analysis, Advanced Algorithms, Software Design,
+                      Computer Graphics & Visualisation, Parallel Computing,
+                      Computer Networks</strong
+                    >
+                    and <strong>Mobile Computing</strong> — anchored by a full
+                    <strong>Mathematics major</strong> covering Multivariable
+                    Calculus, Linear Algebra, Analysis, and Statistics. The
+                    academic backbone that separates good developers from
+                    exceptional ones.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- COLLABORATOR -->
+            <div class="dp">
+              <div class="dp-header">
+                <span class="dp-num">03</span>
+                <span class="dp-label">THE COLLABORATOR</span>
+              </div>
+              <p class="dp-text">
+                Tino doesn't just build — he <strong>communicates</strong>.
+                Three years tutoring Mathematics, Physical Sciences and IT
+                sharpened the ability to break down complexity for any audience.
+                Whether working inside <strong>Agile SCRUM teams</strong>,
+                pair-programming, or presenting to stakeholders, Tino brings
+                clarity, reliability, and genuine team energy to every
+                collaboration. Available for <strong>full-time roles</strong>,
+                <strong>freelance projects</strong>, and
+                <strong>partnerships</strong>.
+              </p>
+            </div>
+          </div>
+          <!-- /.dossier -->
+
+          <div class="page-number">PAGE 02</div>
+        </div>
+      </section>
+
+      <!-- ABILITIES SECTION -->
+      <section id="abilities" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content">
+          <div class="page-header">
+            <h2 class="section-title">THE RUNDOWN</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">
+              Here's what I bring — straight from me
+            </p>
+          </div>
+
+          <div class="scene-grid">
+            <!-- Panel 1: Software Engineering -->
+            <div
+              class="scene-panel"
+              style="--panel-bg: #fefce8; --panel-accent: #c98a00"
+            >
+              <span class="scene-panel-num">01</span>
+              <div class="scene-character">
+                <i class="fas fa-code scene-icon" style="color: #c98a00"></i>
+              </div>
+              <div class="scene-bubble">
+                <h3 class="bubble-domain">SOFTWARE<br />ENGINEERING</h3>
+                <p class="bubble-pitch">
+                  "I build the whole thing — front to back, end to end."
+                </p>
+                <div class="bubble-tags">
+                  <span class="b-tag">C# .NET</span>
+                  <span class="b-tag">React</span>
+                  <span class="b-tag">Node.js</span>
+                  <span class="b-tag">REST APIs</span>
+                  <span class="b-tag">OOP</span>
+                  <span class="b-tag">OpenMP / C++</span>
+                </div>
+                <button class="bubble-cta" data-service="engineering">
+                  HIRE ME <i class="fas fa-bolt"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Panel 2: Mobile Development (flipped) -->
+            <div
+              class="scene-panel scene-panel--flip"
+              style="--panel-bg: #eff6ff; --panel-accent: #1d6fa3"
+            >
+              <span class="scene-panel-num">02</span>
+              <div class="scene-character">
+                <i
+                  class="fas fa-mobile-alt scene-icon"
+                  style="color: #1d6fa3"
+                ></i>
+              </div>
+              <div class="scene-bubble scene-bubble--flip">
+                <h3 class="bubble-domain">MOBILE<br />DEVELOPMENT</h3>
+                <p class="bubble-pitch">
+                  "iOS and Android. One codebase, feels completely native."
+                </p>
+                <div class="bubble-tags">
+                  <span class="b-tag">React Native</span>
+                  <span class="b-tag">iOS</span>
+                  <span class="b-tag">Android</span>
+                  <span class="b-tag">Firebase</span>
+                  <span class="b-tag">Real-time</span>
+                </div>
+                <button class="bubble-cta" data-service="mobile">
+                  HIRE ME <i class="fas fa-rocket"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Panel 3: Data & AI Systems -->
+            <div
+              class="scene-panel"
+              style="--panel-bg: #fff1f2; --panel-accent: #b91c1c"
+            >
+              <span class="scene-panel-num">03</span>
+              <div class="scene-character">
+                <i class="fas fa-brain scene-icon" style="color: #b91c1c"></i>
+              </div>
+              <div class="scene-bubble">
+                <h3 class="bubble-domain">DATA &amp;<br />AI SYSTEMS</h3>
+                <p class="bubble-pitch">
+                  "Raw data in. Intelligent decisions out. That's the job."
+                </p>
+                <div class="bubble-tags">
+                  <span class="b-tag">Python</span>
+                  <span class="b-tag">Neural Networks</span>
+                  <span class="b-tag">Classification</span>
+                  <span class="b-tag">SQL Server</span>
+                  <span class="b-tag">Azure</span>
+                </div>
+                <button class="bubble-cta" data-service="data">
+                  LET'S BUILD <i class="fas fa-chart-line"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Panel 4: Tutoring & Mentorship (flipped) -->
+            <div
+              class="scene-panel scene-panel--flip"
+              style="--panel-bg: #fffbeb; --panel-accent: #92400e"
+            >
+              <span class="scene-panel-num">04</span>
+              <div class="scene-character">
+                <i
+                  class="fas fa-chalkboard-teacher scene-icon"
+                  style="color: #92400e"
+                ></i>
+              </div>
+              <div class="scene-bubble scene-bubble--flip">
+                <h3 class="bubble-domain">TUTORING &amp;<br />MENTORSHIP</h3>
+                <p class="bubble-pitch">
+                  "3 years teaching Maths, Sciences &amp; CS. I break it right
+                  down."
+                </p>
+                <div class="bubble-tags">
+                  <span class="b-tag">Mathematics</span>
+                  <span class="b-tag">Physical Sciences</span>
+                  <span class="b-tag">IT &amp; CS</span>
+                  <span class="b-tag">High School</span>
+                </div>
+                <button class="bubble-cta" data-service="tutoring">
+                  BOOK NOW <i class="fas fa-graduation-cap"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-number">PAGE 03</div>
+        </div>
+      </section>
+
+      <!-- TIMELINE SECTION -->
+      <section id="journey" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content">
+          <div class="page-header">
+            <h2 class="section-title">THE ADVENTURE TIMELINE</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">
+              Scroll horizontally & click bubbles to expand
+            </p>
+          </div>
+
+          <div class="timeline-wrapper">
+            <div class="timeline-scroll-hint">
+              <i class="fas fa-arrows-alt-h"></i>
+              <span>SCROLL HORIZONTALLY</span>
+              <i class="fas fa-hand-pointer"></i>
+              <span>CLICK TO EXPAND</span>
+            </div>
+
+            <div class="timeline">
+              <div class="time-axis"></div>
+              <div class="lane lane-1" id="lane1"></div>
+              <div class="lane lane-2" id="lane2"></div>
+              <div class="lane lane-3" id="lane3"></div>
+            </div>
+          </div>
+
+          <div class="page-number">PAGE 04</div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content">
+          <div class="page-header">
+            <h2 class="section-title">LEGENDARY QUESTS</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Featured project covers</p>
+          </div>
+
+          <div class="projects-grid">
+            <div class="project-cover">
+              <div
+                class="project-cover-bg"
+                style="background-image: url(&quot;rest.png&quot;)"
+              ></div>
+              <div class="project-cover-content">
+                <div class="project-issue">#001</div>
+                <h3 class="project-cover-title">RESTAURANT PLATFORM</h3>
+                <p class="project-cover-tagline">
+                  Real-time management meets live order tracking!
+                </p>
+                <div class="project-tech-badges">
+                  <span class="tech-badge">REACT</span>
+                  <span class="tech-badge">FIREBASE</span>
+                  <span class="tech-badge">NATIVE</span>
+                </div>
+                <a
+                  href="https://rest-platform-9c3cc.web.app/"
+                  target="_blank"
+                  class="project-cover-btn"
+                >
+                  READ NOW <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-cover">
+              <div
+                class="project-cover-bg"
+                style="background-image: url(&quot;welcome_bg.jpg&quot;)"
+              ></div>
+              <div class="project-cover-content">
+                <div class="project-issue">#002</div>
+                <h3 class="project-cover-title">MATCHDAY SPORTS</h3>
+                <p class="project-cover-tagline">
+                  SOFTWARE sports facility management on Azure!
+                </p>
+                <div class="project-tech-badges">
+                  <span class="tech-badge">REACT</span>
+                  <span class="tech-badge">NODE.JS</span>
+                  <span class="tech-badge">AZURE</span>
+                </div>
+                <a
+                  href="https://victorious-bush-007efa41e.6.azurestaticapps.net/"
+                  target="_blank"
+                  class="project-cover-btn"
+                >
+                  READ NOW <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="project-cover">
+              <div
+                class="project-cover-bg"
+                style="background-image: url(&quot;Geofinder.png&quot;)"
+              ></div>
+              <div class="project-cover-content">
+                <div class="project-issue">#003</div>
+                <h3 class="project-cover-title">GEOFINDER</h3>
+                <p class="project-cover-tagline">
+                  Interactive country explorer with live data!
+                </p>
+                <div class="project-tech-badges">
+                  <span class="tech-badge">REACT</span>
+                  <span class="tech-badge">REST API</span>
+                  <span class="tech-badge">JS</span>
+                </div>
+                <a
+                  href="https://tino-ryan.github.io/Geofinder/"
+                  target="_blank"
+                  class="project-cover-btn"
+                >
+                  READ NOW <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-number">PAGE 05</div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="comic-page">
+        <div class="page-border"></div>
+        <div class="page-content contact-content">
+          <div class="page-header">
+            <h2 class="section-title">JOIN THE ADVENTURE</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">
+              Let's build something amazing together
+            </p>
+          </div>
+
+          <div class="contact-wrapper">
+            <div class="contact-buttons">
+              <a href="CV.pdf" target="_blank" class="cta-btn primary">
+                <i class="fas fa-download"></i>
+                <span>Download Resume</span>
+              </a>
+              <button class="cta-btn secondary" id="contactModalBtn">
+                <i class="fas fa-envelope"></i>
+                <span>Get In Touch</span>
+              </button>
+            </div>
+
+            <div class="contact-socials">
+              <a
+                href="https://github.com/tino-ryan"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tino-gozho"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="mailto:tinogozho2@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+              </a>
+              <a href="tel:+27686567064" class="social-link">
+                <i class="fas fa-phone"></i>
+                <span>Phone</span>
+              </a>
+              <a
+                href="https://www.instagram.com/tino_r.y.a.n/"
+                target="_blank"
+                class="social-link"
+              >
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="page-number">PAGE 06</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Contact Modal - ONLY FOR "GET IN TOUCH" -->
+    <div class="contact-modal" id="contactModal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-burst">CONTACT INFO!</div>
+        <h2 class="modal-title">GET IN TOUCH</h2>
+        <div class="modal-contacts">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+              <span class="contact-value" id="emailValue"
+                >tinogozho2@gmail.com</span
+              >
+              <button class="copy-btn" data-copy="tinogozho2@gmail.com">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div class="contact-info">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value" id="phoneValue">+27 68 656 7064</span>
+              <button class="copy-btn" data-copy="+27686567064">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>I'll respond within 24 hours!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="burst-container" id="burstContainer"></div>
+
+    <footer class="comic-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Tinotenda Gozho. All rights reserved.</p>
+        <p class="footer-tagline">
+          SOFTWARE Developer • Data Scientist • Educator
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
