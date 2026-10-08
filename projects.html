@@ -8,43 +8,53 @@
     <link rel="canonical" href="https://tinogozho.netlify.app/projects.html" />
     <meta name="theme-color" content="#1a2912" />
 
+    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
+    <!-- Link previews (WhatsApp, LinkedIn, etc.) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tinogozho.netlify.app/projects.html" />
     <meta property="og:title" content="Projects - Tinotenda Gozho" />
-    <meta property="og:description" content="Websites, web apps, mobile apps and data projects by Tino Gozho." />
+    <meta property="og:description" content="Websites, web apps, mobile apps and data projects built by Tinotenda (Tino) Gozho, a Johannesburg software developer." />
     <meta property="og:image" content="https://tinogozho.netlify.app/icon-512.png" />
     <meta name="twitter:card" content="summary" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=DM+Serif+Display&family=Poppins:wght@300;400;700&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="services.css" />
-    <link rel="stylesheet" href="projects.css" />
+    <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="motion.css" />
+    <script>
+      if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+        document.documentElement.classList.add('anim');
+        setTimeout(function () { if (!window.__motionReady) document.documentElement.classList.remove('anim'); }, 2500);
+      }
+    </script>
   </head>
   <body>
     <header class="comic-header">
       <div class="header-content">
-        <a href="index.html" class="header-logo" aria-label="Back to home">TG</a>
-        <nav class="header-nav" id="mainNav">
-          <a href="index.html#home" class="nav-btn">HOME</a>
-          <a href="index.html#services" class="nav-btn">SERVICES</a>
-          <a href="index.html#about" class="nav-btn">ABOUT</a>
-          <a href="index.html#journey" class="nav-btn">JOURNEY</a>
+        <a href="index.html" class="header-logo" aria-label="Tinotenda Gozho, home">TG</a>
+        <nav class="header-nav" id="mainNav" aria-label="Main">
+          <a href="index.html" class="nav-btn">HOME</a>
+          <a href="tutoring.html" class="nav-btn">TUTORING</a>
+          <a href="websites.html" class="nav-btn">WEBSITES &amp; APPS</a>
           <a href="projects.html" class="nav-btn active" aria-current="page">PROJECTS</a>
-          <a href="index.html#contact" class="nav-btn">CONTACT</a>
+          <a href="about.html" class="nav-btn">ABOUT</a>
         </nav>
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mainNav">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </header>
 
-    <main class="comic-book">
-      <section class="comic-page projects-page">
+    <main class="comic-book page-top">
+      <section class="comic-page">
         <div class="page-border"></div>
         <div class="page-content">
           <div class="page-header">
@@ -62,9 +72,7 @@
             <button class="pj-filter" data-filter="graphics" aria-pressed="false">Games &amp; graphics</button>
           </div>
 
-          <div class="pj-grid" id="pjGrid">
-
-            <!-- WorkLink SA -->
+          <div class="pj-grid pj-grid--list" id="pjGrid">
             <article class="pj-card" data-cats="webapp mobile">
               <div class="pj-cover pj-cover--type" style="--cover: #2e86de">
                 <span class="pj-cover-name">WorkLink SA</span>
@@ -72,32 +80,20 @@
               </div>
               <div class="pj-body">
                 <p class="pj-meta"><span class="pj-type">Web app</span> Solo project, 2025–26</p>
-                <h2 class="pj-title">WorkLink SA</h2>
-                <p class="pj-desc">
-                  Connects people with local workers like gardeners, plumbers, cleaners and electricians.
-                  Workers set up profiles with their services, availability and photos. Clients search,
-                  post jobs and leave reviews. Installs on a phone like an app.
-                </p>
+                <h3 class="pj-title">WorkLink SA</h3>
+                <p class="pj-desc">Connects people with local workers like gardeners, plumbers, cleaners and electricians. Workers set up profiles with their services, availability and photos. Clients search, post jobs and leave reviews. Installs on a phone like an app.</p>
                 <ul class="pj-tags"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li></ul>
                 <div class="pj-links">
                   <a href="https://github.com/tino-ryan/worklink-sa" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
                 </div>
               </div>
             </article>
-
-            <!-- Restaurant Platform -->
             <article class="pj-card" data-cats="webapp mobile">
-              <div class="pj-cover pj-cover--type" style="--cover: #ff4757">
-                <span class="pj-cover-name">Restaurant Platform</span>
-                <i class="fas fa-utensils" aria-hidden="true"></i>
-              </div>
+              <div class="pj-cover"><span class="pj-live">Live</span><img src="images/dineease.jpg" alt="DineEase staff login screen on a kitchen table background" loading="lazy" /></div>
               <div class="pj-body">
                 <p class="pj-meta"><span class="pj-type">Web + mobile app</span> Solo project, 2025</p>
-                <h2 class="pj-title">Restaurant Platform</h2>
-                <p class="pj-desc">
-                  Customers order from their phone at the table and see their bill. Staff get a live
-                  dashboard for orders, waiter requests, the menu and sales reports.
-                </p>
+                <h3 class="pj-title">DineEase Restaurant Platform</h3>
+                <p class="pj-desc">Customers order from their phone at the table and see their bill. Staff get a live dashboard for orders, waiter requests, the menu and sales reports.</p>
                 <ul class="pj-tags"><li>React</li><li>React Native</li><li>Firebase</li></ul>
                 <div class="pj-links">
                   <a href="https://rest-platform-9c3cc.web.app/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Live site</a>
@@ -105,17 +101,12 @@
                 </div>
               </div>
             </article>
-
-            <!-- MatchDay -->
             <article class="pj-card" data-cats="webapp">
-              <div class="pj-cover"><img src="MATCHDAY.png" alt="MatchDay login screen with a football tactics board" loading="lazy" /></div>
+              <div class="pj-cover"><span class="pj-live">Live</span><img src="MATCHDAY.png" alt="MatchDay login screen with a football tactics board" loading="lazy" /></div>
               <div class="pj-body">
                 <p class="pj-meta"><span class="pj-type">Web app</span> Team project, 2025</p>
-                <h2 class="pj-title">MatchDay</h2>
-                <p class="pj-desc">
-                  Booking system for a community sports centre. Residents book facilities and events,
-                  staff handle maintenance reports, and admins manage users and roles.
-                </p>
+                <h3 class="pj-title">MatchDay</h3>
+                <p class="pj-desc">Booking system for a community sports centre. Residents book facilities and events, staff handle maintenance reports, and admins manage users and roles.</p>
                 <ul class="pj-tags"><li>React</li><li>Node.js</li><li>Firebase</li><li>Azure</li></ul>
                 <div class="pj-links">
                   <a href="https://victorious-bush-007efa41e.6.azurestaticapps.net/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Live site</a>
@@ -123,25 +114,18 @@
                 </div>
               </div>
             </article>
-
-            <!-- Muscle Mommies -->
             <article class="pj-card" data-cats="webapp">
               <div class="pj-cover pj-cover--phone"><img src="thebox.png" alt="Find Nearby Thrift Stores screen with a map" loading="lazy" /></div>
               <div class="pj-body">
                 <p class="pj-meta"><span class="pj-type">Web app</span> Team project, 2025</p>
-                <h2 class="pj-title">Muscle Mommies</h2>
-                <p class="pj-desc">
-                  Marketplace for thrift stores. Shoppers find stores near them on a map, browse items
-                  and chat with sellers. Store owners manage stock and reviews.
-                </p>
+                <h3 class="pj-title">Muscle Mommies</h3>
+                <p class="pj-desc">Marketplace for thrift stores. Shoppers find stores near them on a map, browse items and chat with sellers. Store owners manage stock and reviews.</p>
                 <ul class="pj-tags"><li>React</li><li>Node.js</li><li>Firebase</li><li>Jest</li></ul>
                 <div class="pj-links">
                   <a href="https://github.com/tino-ryan/Muscle-mommies" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
                 </div>
               </div>
             </article>
-
-            <!-- Gibson Pillay Learning Academy -->
             <article class="pj-card" data-cats="website">
               <div class="pj-cover pj-cover--type" style="--cover: #2d5016">
                 <span class="pj-cover-name">Gibson Pillay Learning Academy</span>
@@ -149,44 +133,33 @@
               </div>
               <div class="pj-body">
                 <p class="pj-meta"><span class="pj-type">Website</span> Client project, 2025</p>
-                <h2 class="pj-title">Gibson Pillay Learning Academy</h2>
-                <p class="pj-desc">
-                  Multi-page website for a learning academy, built with React and hosted on Vercel.
-                </p>
+                <h3 class="pj-title">Gibson Pillay Learning Academy</h3>
+                <p class="pj-desc">Multi-page website for a learning academy, built with React and hosted on Vercel.</p>
                 <ul class="pj-tags"><li>React</li><li>Tailwind</li><li>Vercel</li></ul>
                 <div class="pj-links">
                   <a href="https://github.com/tino-ryan/gplademo" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
                 </div>
               </div>
             </article>
-
-            <!-- Gozho Maths Clinic -->
             <article class="pj-card" data-cats="website">
-              <div class="pj-cover"><img src="images/GMC.jpg" alt="Gozho Maths Clinic website on a laptop and phone" loading="lazy" /></div>
+              <div class="pj-cover"><span class="pj-live">Live</span><img src="images/GMC.jpg" alt="Gozho Maths Clinic website on a laptop and phone" loading="lazy" /></div>
               <div class="pj-body">
-                <p class="pj-meta"><span class="pj-type">Website</span> Solo project, 2025</p>
-                <h2 class="pj-title">Gozho Maths Clinic</h2>
-                <p class="pj-desc">
-                  Website for a weekend maths tutoring clinic, with prices, venue, timetable and a
-                  sign-up form. Works on phones and laptops.
-                </p>
+                <p class="pj-meta"><span class="pj-type">Website</span> Client project, 2025</p>
+                <h3 class="pj-title">Gozho Maths Clinic</h3>
+                <p class="pj-desc">Website for a weekend maths tutoring clinic, with prices, venue, timetable and a sign-up form. Recently refreshed and works on phones and laptops.</p>
                 <ul class="pj-tags"><li>HTML</li><li>CSS</li></ul>
                 <div class="pj-links">
+                  <a href="https://gozhomathsclinic.netlify.app" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Live site</a>
                   <a href="gmcdemo.mp4" target="_blank" rel="noopener"><i class="fas fa-play"></i> Watch demo</a>
                 </div>
               </div>
             </article>
-
-            <!-- Geofinder -->
             <article class="pj-card" data-cats="website">
-              <div class="pj-cover"><img src="images/Geofinder.png" alt="Geofinder showing country information for Canada" loading="lazy" /></div>
+              <div class="pj-cover"><span class="pj-live">Live</span><img src="images/Geofinder.png" alt="Geofinder showing country information for Canada" loading="lazy" /></div>
               <div class="pj-body">
                 <p class="pj-meta"><span class="pj-type">Website</span> Solo project, 2026</p>
-                <h2 class="pj-title">Geofinder</h2>
-                <p class="pj-desc">
-                  Search any country to see its capital, population, region, flag and neighbouring
-                  countries, pulled live from a public API.
-                </p>
+                <h3 class="pj-title">Geofinder</h3>
+                <p class="pj-desc">Search any country to see its capital, population, region, flag and neighbouring countries, pulled live from a public API.</p>
                 <ul class="pj-tags"><li>JavaScript</li><li>REST API</li></ul>
                 <div class="pj-links">
                   <a href="https://tino-ryan.github.io/Geofinder/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Live site</a>
@@ -195,28 +168,18 @@
                 </div>
               </div>
             </article>
-
-            <!-- Cozy Ghost Hotel -->
             <article class="pj-card" data-cats="graphics">
-              <div class="pj-cover pj-cover--type" style="--cover: #5c3d8a">
-                <span class="pj-cover-name">Cozy Ghost Hotel</span>
-                <i class="fas fa-ghost" aria-hidden="true"></i>
-              </div>
+              <div class="pj-cover"><img src="images/ghost-hotel.jpg" alt="Cozy Ghost Hotel title screen with three ghost hotel staff" loading="lazy" /></div>
               <div class="pj-body">
                 <p class="pj-meta"><span class="pj-type">3D game</span> University project, 2025</p>
-                <h2 class="pj-title">Cozy Ghost Hotel</h2>
-                <p class="pj-desc">
-                  A 3D browser game built for Computer Graphics &amp; Visualisation at Wits, rendered
-                  with Three.js.
-                </p>
+                <h3 class="pj-title">Cozy Ghost Hotel</h3>
+                <p class="pj-desc">A 3D browser game built for Computer Graphics &amp; Visualisation at Wits, rendered with Three.js.</p>
                 <ul class="pj-tags"><li>Three.js</li><li>JavaScript</li><li>Vite</li></ul>
                 <div class="pj-links">
                   <a href="https://github.com/tino-ryan/cgv-game" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
                 </div>
               </div>
             </article>
-
-            <!-- StudyBot -->
             <article class="pj-card" data-cats="data">
               <div class="pj-cover pj-cover--type" style="--cover: #8b6f47">
                 <span class="pj-cover-name">StudyBot</span>
@@ -224,16 +187,11 @@
               </div>
               <div class="pj-body">
                 <p class="pj-meta"><span class="pj-type">Chatbot</span> Solo project, 2025</p>
-                <h2 class="pj-title">StudyBot</h2>
-                <p class="pj-desc">
-                  Homework helper that solves equations step by step and answers Physics, Chemistry
-                  and Biology questions using Wikipedia.
-                </p>
+                <h3 class="pj-title">StudyBot</h3>
+                <p class="pj-desc">Homework helper that solves equations step by step and answers Physics, Chemistry and Biology questions using Wikipedia.</p>
                 <ul class="pj-tags"><li>Python</li><li>Flask</li><li>SymPy</li></ul>
               </div>
             </article>
-
-            <!-- Digit recogniser -->
             <article class="pj-card" data-cats="data">
               <div class="pj-cover pj-cover--type" style="--cover: #1a2912">
                 <span class="pj-cover-name">Digit Recogniser</span>
@@ -241,43 +199,34 @@
               </div>
               <div class="pj-body">
                 <p class="pj-meta"><span class="pj-type">Machine learning</span> Solo project, 2025</p>
-                <h2 class="pj-title">Handwritten Digit Recogniser</h2>
-                <p class="pj-desc">
-                  Neural network trained on 70,000 handwritten numbers (MNIST) that reads digits from
-                  my own photos.
-                </p>
+                <h3 class="pj-title">Handwritten Digit Recogniser</h3>
+                <p class="pj-desc">Neural network trained on 70,000 handwritten numbers (MNIST) that reads digits from my own photos.</p>
                 <ul class="pj-tags"><li>Python</li><li>scikit-learn</li><li>Neural networks</li></ul>
               </div>
             </article>
           </div>
-
           <p class="pj-empty" id="pjEmpty" hidden>No projects in this category yet.</p>
 
           <div class="pj-cta">
-            <p><strong>Like what you see?</strong> I build websites from R700 and apps on quote.</p>
-            <a href="index.html#build" class="tier-cta"><i class="fas fa-tags" aria-hidden="true"></i> See packages and prices</a>
+            <p><strong>Like what you see?</strong> Websites from R700, apps on quote.</p>
+            <a href="websites.html" class="btn btn--dark"><i class="fas fa-tags"></i> See packages and prices</a>
           </div>
         </div>
       </section>
     </main>
 
-    <a
-      class="wa-float"
-      href="https://wa.me/27686567064?text=Hi%20Tino%2C%20I%20saw%20your%20projects%20page."
-      target="_blank"
-      rel="noopener"
-      aria-label="Chat on WhatsApp"
-    >
+    <a class="wa-float" href="https://wa.me/27686567064?text=Hi%20Tino%2C%20I%20saw%20your%20projects%20page." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
       <i class="fab fa-whatsapp" aria-hidden="true"></i><span>Chat on WhatsApp</span>
     </a>
 
     <footer class="comic-footer">
       <div class="footer-content">
         <p>&copy; 2026 Tinotenda Gozho. All rights reserved.</p>
-        <p class="footer-tagline">Software Developer • Tutor</p>
+        <p class="footer-tagline">Software Developer • Tutor • Johannesburg</p>
       </div>
     </footer>
 
-    <script src="projects.js"></script>
+    <script src="site.js"></script>
+    <script src="motion.js"></script>
   </body>
 </html>

@@ -1,0 +1,219 @@
+/* ==========================================================
+   MOTION.CSS — animations and smoothness for every page.
+   Everything here is switched off for people who ask their
+   device for reduced motion (see the bottom of this file).
+   ========================================================== */
+
+/* ---------- Page-to-page crossfade (Chrome, Edge, Safari 18+) ---------- */
+@view-transition { navigation: auto; }
+.comic-header { view-transition-name: site-header; }
+::view-transition-old(root) { animation: vt-out 0.22s ease both; }
+::view-transition-new(root) { animation: vt-in 0.38s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes vt-out { to { opacity: 0; transform: translateY(-10px); } }
+@keyframes vt-in  { from { opacity: 0; transform: translateY(18px); } }
+
+/* Entrance transforms (big stamped titles, spinning stickers) must never
+   make the page wider than the screen on phones */
+html { overflow-x: clip; }
+.comic-page { overflow-x: clip; }
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+.comic-cover { perspective: 900px; }
+.cover-city-bg { transform-origin: 50% 40%; }
+
+/* old CSS loops are replaced by the JS-driven field */
+.anim .cover-langs .lang-float { display: none; }
+.anim .hero-name { animation: none; }
+
+/* Icon field */
+.fly {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+.fly-zoom { will-change: transform, opacity, filter; transform-origin: 50% 50%; }
+.fly-inner {
+  display: grid;
+  place-items: center;
+  animation: flyBob var(--bob, 6s) ease-in-out infinite;
+  animation-delay: var(--bob-delay, 0s);
+}
+@keyframes flyBob {
+  0%, 100% { transform: translateY(0) rotate(var(--r1, -8deg)); }
+  50%      { transform: translateY(-14px) rotate(var(--r2, 8deg)); }
+}
+.fly img {
+  width: var(--size, 64px);
+  height: auto;
+  filter: drop-shadow(4px 4px 0 rgba(0,0,0,.55)) drop-shadow(0 0 14px rgba(255,215,0,.35));
+}
+.fly-chip {
+  display: grid;
+  place-items: center;
+  width: var(--size, 64px);
+  height: var(--size, 64px);
+  border-radius: 50%;
+  background: var(--chip-bg, #ffd700);
+  color: var(--chip-fg, #1a2912);
+  border: 3px solid #1a2912;
+  box-shadow: 4px 4px 0 rgba(0,0,0,.55), 0 0 18px rgba(255,215,0,.35);
+  font-size: calc(var(--size, 64px) * 0.5);
+  line-height: 1;
+}
+.fly-chip--math {
+  font-family: 'DM Serif Display', Georgia, serif;
+  border-radius: 14px;
+  background: #fff;
+  font-size: calc(var(--size, 64px) * 0.48);
+}
+
+/* Name letters that slam in */
+.hero-name .ltr { display: inline-block; will-change: transform, opacity; }
+.hero-name.is-pulsing { animation: titlePulse 3s ease-in-out infinite; }
+
+/* Things revealed by the intro */
+.anim .comic-cover .cover-banner,
+.anim .comic-cover .hero-ctas .btn,
+.anim .comic-cover .stat-badge,
+.anim .comic-cover .cover-bottom-bar,
+.anim .comic-cover .action-word { opacity: 0; }
+
+/* Tap-to-launch projectile */
+.launch {
+  position: absolute;
+  z-index: 6;
+  pointer-events: none;
+  translate: -50% -50%;
+  will-change: transform, opacity, filter;
+}
+
+/* ==========================================================
+   SCROLL REVEALS — a comic "panel pop", not a generic fade
+   ========================================================== */
+.anim .reveal {
+  opacity: 0;
+  transform: translateY(26px) scale(0.965) rotate(var(--tilt, -0.8deg));
+  transition:
+    opacity 0.55s ease,
+    transform 0.7s cubic-bezier(.18, 1.25, .4, 1);
+  transition-delay: var(--d, 0s);
+}
+.anim .reveal.in { opacity: 1; transform: none; }
+
+/* Big page titles get stamped on */
+.anim .section-title.reveal { transform: scale(1.7) rotate(-7deg); opacity: 0; }
+.anim .section-title.reveal.in {
+  opacity: 1;
+  transform: rotate(-1.5deg);
+  transition: opacity 0.25s ease, transform 0.55s cubic-bezier(.2, 1.6, .4, 1);
+}
+.anim .title-underline.reveal { transform: scaleX(0) rotate(-1deg); }
+.anim .title-underline.reveal.in { transform: rotate(-1deg); transition-delay: 0.25s; }
+
+/* The APEX poster gets slapped onto the page */
+.anim .apex-sheet.reveal { transform: translateY(40px) rotate(-5deg) scale(1.04); }
+.anim .apex-sheet.reveal.in { transform: rotate(0); transition-duration: 0.5s, 0.8s; }
+.anim .apex-sheet.reveal .apex-tape { opacity: 0; transform: scale(1.6) rotate(-14deg); transition: opacity .3s ease .55s, transform .45s cubic-bezier(.2,1.6,.4,1) .55s; }
+.anim .apex-sheet.reveal.in .apex-tape--left { opacity: 1; transform: rotate(-5deg); }
+.anim .apex-sheet.reveal.in .apex-tape--right { opacity: 1; transform: rotate(4deg); transition-delay: .7s; }
+
+/* Stickers wobble in after their card */
+.anim .reveal .door-sticker,
+.anim .reveal .tier-sticker { opacity: 0; transform: scale(2) rotate(-20deg); }
+.anim .reveal.in .door-sticker,
+.anim .reveal.in .tier-sticker {
+  opacity: 1;
+  transform: rotate(4deg);
+  transition: opacity .2s ease calc(var(--d, 0s) + .45s), transform .5s cubic-bezier(.2,1.7,.4,1) calc(var(--d, 0s) + .45s);
+}
+.anim .reveal.in .door--learn .door-sticker,
+.anim .door--learn.reveal.in .door-sticker { transform: rotate(-3deg); }
+
+/* ==========================================================
+   HOVER / PRESS POLISH
+   ========================================================== */
+.pj-card { transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease; }
+.pj-card:hover { transform: translate(-3px, -4px) rotate(-0.4deg); box-shadow: 10px 10px 0 var(--dark); }
+.pj-cover img { transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.pj-card:hover .pj-cover img { transform: scale(1.06); }
+.pj-cover--type i { transition: transform .35s cubic-bezier(.2,1.6,.4,1); }
+.pj-card:hover .pj-cover--type i { transform: rotate(-12deg) scale(1.2); }
+
+.tier { transition: transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease; }
+.tier:hover { transform: translateY(-6px); box-shadow: 10px 12px 0 var(--dark); }
+.tier--popular:hover { box-shadow: 13px 15px 0 var(--dark); }
+
+.door:hover .door-sticker { animation: wobble .6s ease; }
+@keyframes wobble {
+  0%, 100% { transform: rotate(4deg); }
+  25% { transform: rotate(-6deg) scale(1.08); }
+  60% { transform: rotate(8deg) scale(1.04); }
+}
+.door-icon { transition: transform .35s cubic-bezier(.2,1.6,.4,1); }
+.door:hover .door-icon { transform: rotate(-10deg) scale(1.1); }
+
+.pj-filter { transition: transform .15s ease, background .15s ease, color .15s ease; }
+.pj-filter:active { transform: scale(.94); }
+.pj-card.pj-show { animation: cardIn .45s cubic-bezier(.2,1.3,.4,1) both; animation-delay: var(--d, 0s); }
+@keyframes cardIn { from { opacity: 0; transform: translateY(14px) scale(.96); } }
+
+.wa-float { transition: transform .15s ease, box-shadow .15s ease; animation: waIn .6s cubic-bezier(.2,1.6,.4,1) 1.6s both; }
+.wa-float i { animation: waNudge 7s ease-in-out 4s infinite; display: inline-block; }
+@keyframes waIn { from { transform: scale(0) rotate(-30deg); opacity: 0; } }
+@keyframes waNudge {
+  0%, 88%, 100% { transform: none; }
+  91% { transform: rotate(-16deg) scale(1.15); }
+  94% { transform: rotate(14deg) scale(1.15); }
+  97% { transform: rotate(-8deg); }
+}
+
+.contact-list a { transition: border-color .15s ease, transform .15s ease, background .15s ease; }
+.contact-list a:hover { transform: translateX(4px); background: rgba(255,215,0,.08); }
+
+.faq details summary::after { transition: transform .25s ease; }
+.faq details[open] summary::after { transform: rotate(180deg); }
+.faq details[open] p { animation: faqIn .35s ease both; }
+@keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } }
+
+/* Mobile menu slides down */
+.header-nav.mobile-active { animation: menuIn .28s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes menuIn { from { opacity: 0; transform: translateY(-10px); } }
+
+/* ==========================================================
+   MODALS
+   ========================================================== */
+dialog.modal[open] { animation: modalIn .42s cubic-bezier(.2,1.35,.4,1) both; }
+dialog.modal[open]::backdrop { animation: backdropIn .3s ease both; }
+dialog.modal.closing { animation: modalOut .2s ease both; }
+dialog.modal.closing::backdrop { animation: backdropIn .2s ease reverse both; }
+@keyframes modalIn { from { opacity: 0; transform: translateY(30px) scale(.94) rotate(-1.5deg); } }
+@keyframes modalOut { to { opacity: 0; transform: translateY(20px) scale(.97); } }
+@keyframes backdropIn { from { opacity: 0; } }
+@media (max-width: 640px) {
+  dialog.modal[open] { animation: sheetUp .38s cubic-bezier(.2,.9,.25,1) both; }
+  dialog.modal.closing { animation: sheetDown .22s ease both; }
+  @keyframes sheetUp { from { transform: translateY(100%); } }
+  @keyframes sheetDown { to { transform: translateY(100%); } }
+}
+.chips span { transition: background .15s ease, color .15s ease, transform .15s cubic-bezier(.2,1.6,.4,1); }
+.chips input:checked + span { transform: scale(1.04); }
+.form-error:not([hidden]) { animation: shake .4s ease; }
+@keyframes shake { 20%, 60% { transform: translateX(-6px); } 40%, 80% { transform: translateX(6px); } }
+
+/* ==========================================================
+   REDUCED MOTION — show everything, move nothing
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .anim .reveal, .anim .reveal.in,
+  .anim .comic-cover .cover-banner, .anim .comic-cover .hero-ctas .btn,
+  .anim .comic-cover .stat-badge, .anim .comic-cover .cover-bottom-bar,
+  .anim .comic-cover .action-word,
+  .anim .reveal .door-sticker, .anim .reveal .tier-sticker,
+  .anim .apex-sheet.reveal .apex-tape { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .fly-inner, .wa-float, .wa-float i, .pj-card.pj-show, dialog.modal[open] { animation: none !important; }
+}
