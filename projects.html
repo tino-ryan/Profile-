@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Tinotenda Gozho</title>
+    <meta name="description" content="Websites, web apps, mobile apps and data projects built by Tinotenda (Tino) Gozho, a Johannesburg software developer." />
+    <link rel="canonical" href="https://tinogozho.netlify.app/projects.html" />
+    <meta name="theme-color" content="#1a2912" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tinogozho.netlify.app/projects.html" />
+    <meta property="og:title" content="Projects - Tinotenda Gozho" />
+    <meta property="og:description" content="Websites, web apps, mobile apps and data projects by Tino Gozho." />
+    <meta property="og:image" content="https://tinogozho.netlify.app/icon-512.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="services.css" />
+    <link rel="stylesheet" href="projects.css" />
+  </head>
+  <body>
+    <header class="comic-header">
+      <div class="header-content">
+        <a href="index.html" class="header-logo" aria-label="Back to home">TG</a>
+        <nav class="header-nav" id="mainNav">
+          <a href="index.html#home" class="nav-btn">HOME</a>
+          <a href="index.html#services" class="nav-btn">SERVICES</a>
+          <a href="index.html#about" class="nav-btn">ABOUT</a>
+          <a href="index.html#journey" class="nav-btn">JOURNEY</a>
+          <a href="projects.html" class="nav-btn active" aria-current="page">PROJECTS</a>
+          <a href="index.html#contact" class="nav-btn">CONTACT</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="comic-book">
+      <section class="comic-page projects-page">
+        <div class="page-border"></div>
+        <div class="page-content">
+          <div class="page-header">
+            <h1 class="section-title">ALL PROJECTS</h1>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Websites, apps and experiments I've built</p>
+          </div>
+
+          <div class="pj-filters" role="toolbar" aria-label="Filter projects">
+            <button class="pj-filter" data-filter="all" aria-pressed="true">All</button>
+            <button class="pj-filter" data-filter="website" aria-pressed="false">Websites</button>
+            <button class="pj-filter" data-filter="webapp" aria-pressed="false">Web apps</button>
+            <button class="pj-filter" data-filter="mobile" aria-pressed="false">Mobile</button>
+            <button class="pj-filter" data-filter="data" aria-pressed="false">Data &amp; AI</button>
+            <button class="pj-filter" data-filter="graphics" aria-pressed="false">Games &amp; graphics</button>
+          </div>
+
+          <div class="pj-grid" id="pjGrid">
+
+            <!-- WorkLink SA -->
+            <article class="pj-card" data-cats="webapp mobile">
+              <div class="pj-cover pj-cover--type" style="--cover: #2e86de">
+                <span class="pj-cover-name">WorkLink SA</span>
+                <i class="fas fa-people-carry-box" aria-hidden="true"></i>
+              </div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">Web app</span> Solo project, 2025–26</p>
+                <h2 class="pj-title">WorkLink SA</h2>
+                <p class="pj-desc">
+                  Connects people with local workers like gardeners, plumbers, cleaners and electricians.
+                  Workers set up profiles with their services, availability and photos. Clients search,
+                  post jobs and leave reviews. Installs on a phone like an app.
+                </p>
+                <ul class="pj-tags"><li>Next.js</li><li>TypeScript</li><li>Supabase</li><li>PWA</li></ul>
+                <div class="pj-links">
+                  <a href="https://github.com/tino-ryan/worklink-sa" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Restaurant Platform -->
+            <article class="pj-card" data-cats="webapp mobile">
+              <div class="pj-cover pj-cover--type" style="--cover: #ff4757">
+                <span class="pj-cover-name">Restaurant Platform</span>
+                <i class="fas fa-utensils" aria-hidden="true"></i>
+              </div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">Web + mobile app</span> Solo project, 2025</p>
+                <h2 class="pj-title">Restaurant Platform</h2>
+                <p class="pj-desc">
+                  Customers order from their phone at the table and see their bill. Staff get a live
+                  dashboard for orders, waiter requests, the menu and sales reports.
+                </p>
+                <ul class="pj-tags"><li>React</li><li>React Native</li><li>Firebase</li></ul>
+                <div class="pj-links">
+                  <a href="https://rest-platform-9c3cc.web.app/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Live site</a>
+                  <a href="https://github.com/tino-ryan/restaurant-app" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- MatchDay -->
+            <article class="pj-card" data-cats="webapp">
+              <div class="pj-cover"><img src="MATCHDAY.png" alt="MatchDay login screen with a football tactics board" loading="lazy" /></div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">Web app</span> Team project, 2025</p>
+                <h2 class="pj-title">MatchDay</h2>
+                <p class="pj-desc">
+                  Booking system for a community sports centre. Residents book facilities and events,
+                  staff handle maintenance reports, and admins manage users and roles.
+                </p>
+                <ul class="pj-tags"><li>React</li><li>Node.js</li><li>Firebase</li><li>Azure</li></ul>
+                <div class="pj-links">
+                  <a href="https://victorious-bush-007efa41e.6.azurestaticapps.net/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Live site</a>
+                  <a href="https://github.com/tino-ryan/matchday" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Muscle Mommies -->
+            <article class="pj-card" data-cats="webapp">
+              <div class="pj-cover pj-cover--phone"><img src="thebox.png" alt="Find Nearby Thrift Stores screen with a map" loading="lazy" /></div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">Web app</span> Team project, 2025</p>
+                <h2 class="pj-title">Muscle Mommies</h2>
+                <p class="pj-desc">
+                  Marketplace for thrift stores. Shoppers find stores near them on a map, browse items
+                  and chat with sellers. Store owners manage stock and reviews.
+                </p>
+                <ul class="pj-tags"><li>React</li><li>Node.js</li><li>Firebase</li><li>Jest</li></ul>
+                <div class="pj-links">
+                  <a href="https://github.com/tino-ryan/Muscle-mommies" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Gibson Pillay Learning Academy -->
+            <article class="pj-card" data-cats="website">
+              <div class="pj-cover pj-cover--type" style="--cover: #2d5016">
+                <span class="pj-cover-name">Gibson Pillay Learning Academy</span>
+                <i class="fas fa-school" aria-hidden="true"></i>
+              </div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">Website</span> Client project, 2025</p>
+                <h2 class="pj-title">Gibson Pillay Learning Academy</h2>
+                <p class="pj-desc">
+                  Multi-page website for a learning academy, built with React and hosted on Vercel.
+                </p>
+                <ul class="pj-tags"><li>React</li><li>Tailwind</li><li>Vercel</li></ul>
+                <div class="pj-links">
+                  <a href="https://github.com/tino-ryan/gplademo" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Gozho Maths Clinic -->
+            <article class="pj-card" data-cats="website">
+              <div class="pj-cover"><img src="images/GMC.jpg" alt="Gozho Maths Clinic website on a laptop and phone" loading="lazy" /></div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">Website</span> Solo project, 2025</p>
+                <h2 class="pj-title">Gozho Maths Clinic</h2>
+                <p class="pj-desc">
+                  Website for a weekend maths tutoring clinic, with prices, venue, timetable and a
+                  sign-up form. Works on phones and laptops.
+                </p>
+                <ul class="pj-tags"><li>HTML</li><li>CSS</li></ul>
+                <div class="pj-links">
+                  <a href="gmcdemo.mp4" target="_blank" rel="noopener"><i class="fas fa-play"></i> Watch demo</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Geofinder -->
+            <article class="pj-card" data-cats="website">
+              <div class="pj-cover"><img src="images/Geofinder.png" alt="Geofinder showing country information for Canada" loading="lazy" /></div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">Website</span> Solo project, 2026</p>
+                <h2 class="pj-title">Geofinder</h2>
+                <p class="pj-desc">
+                  Search any country to see its capital, population, region, flag and neighbouring
+                  countries, pulled live from a public API.
+                </p>
+                <ul class="pj-tags"><li>JavaScript</li><li>REST API</li></ul>
+                <div class="pj-links">
+                  <a href="https://tino-ryan.github.io/Geofinder/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> Live site</a>
+                  <a href="geofinder.mp4" target="_blank" rel="noopener"><i class="fas fa-play"></i> Watch demo</a>
+                  <a href="https://github.com/tino-ryan/Geofinder" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Cozy Ghost Hotel -->
+            <article class="pj-card" data-cats="graphics">
+              <div class="pj-cover pj-cover--type" style="--cover: #5c3d8a">
+                <span class="pj-cover-name">Cozy Ghost Hotel</span>
+                <i class="fas fa-ghost" aria-hidden="true"></i>
+              </div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">3D game</span> University project, 2025</p>
+                <h2 class="pj-title">Cozy Ghost Hotel</h2>
+                <p class="pj-desc">
+                  A 3D browser game built for Computer Graphics &amp; Visualisation at Wits, rendered
+                  with Three.js.
+                </p>
+                <ul class="pj-tags"><li>Three.js</li><li>JavaScript</li><li>Vite</li></ul>
+                <div class="pj-links">
+                  <a href="https://github.com/tino-ryan/cgv-game" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- StudyBot -->
+            <article class="pj-card" data-cats="data">
+              <div class="pj-cover pj-cover--type" style="--cover: #8b6f47">
+                <span class="pj-cover-name">StudyBot</span>
+                <i class="fas fa-robot" aria-hidden="true"></i>
+              </div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">Chatbot</span> Solo project, 2025</p>
+                <h2 class="pj-title">StudyBot</h2>
+                <p class="pj-desc">
+                  Homework helper that solves equations step by step and answers Physics, Chemistry
+                  and Biology questions using Wikipedia.
+                </p>
+                <ul class="pj-tags"><li>Python</li><li>Flask</li><li>SymPy</li></ul>
+              </div>
+            </article>
+
+            <!-- Digit recogniser -->
+            <article class="pj-card" data-cats="data">
+              <div class="pj-cover pj-cover--type" style="--cover: #1a2912">
+                <span class="pj-cover-name">Digit Recogniser</span>
+                <i class="fas fa-brain" aria-hidden="true"></i>
+              </div>
+              <div class="pj-body">
+                <p class="pj-meta"><span class="pj-type">Machine learning</span> Solo project, 2025</p>
+                <h2 class="pj-title">Handwritten Digit Recogniser</h2>
+                <p class="pj-desc">
+                  Neural network trained on 70,000 handwritten numbers (MNIST) that reads digits from
+                  my own photos.
+                </p>
+                <ul class="pj-tags"><li>Python</li><li>scikit-learn</li><li>Neural networks</li></ul>
+              </div>
+            </article>
+          </div>
+
+          <p class="pj-empty" id="pjEmpty" hidden>No projects in this category yet.</p>
+
+          <div class="pj-cta">
+            <p><strong>Like what you see?</strong> I build websites from R700 and apps on quote.</p>
+            <a href="index.html#build" class="tier-cta"><i class="fas fa-tags" aria-hidden="true"></i> See packages and prices</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a
+      class="wa-float"
+      href="https://wa.me/27686567064?text=Hi%20Tino%2C%20I%20saw%20your%20projects%20page."
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp" aria-hidden="true"></i><span>Chat on WhatsApp</span>
+    </a>
+
+    <footer class="comic-footer">
+      <div class="footer-content">
+        <p>&copy; 2026 Tinotenda Gozho. All rights reserved.</p>
+        <p class="footer-tagline">Software Developer • Tutor</p>
+      </div>
+    </footer>
+
+    <script src="projects.js"></script>
+  </body>
+</html>

@@ -1,0 +1,595 @@
+/* ==========================================================
+   SERVICES: "How can I help?", APEX tutoring, build packages,
+   floating WhatsApp button.  Loaded after styles.css.
+   ========================================================== */
+
+:root {
+  --ink: #161616;
+  --paper: #ffffff;
+  --wa: #25d366;
+  --wa-dark: #128c4a;
+}
+
+/* ---------- Two doors ---------- */
+.svc-doors {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem;
+  max-width: 1000px;
+  margin: 0 auto 4.5rem;
+}
+
+.svc-door {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 1.1rem;
+  row-gap: 0.35rem;
+  align-items: start;
+  padding: 1.6rem 1.7rem;
+  border: 4px solid var(--dark);
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 var(--dark);
+  text-decoration: none;
+  color: var(--dark);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.svc-door--learn { background: var(--paper); }
+.svc-door--build { background: var(--comic-yellow); }
+
+.svc-door:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 11px 11px 0 var(--dark);
+}
+.svc-door:active {
+  transform: translate(3px, 3px);
+  box-shadow: 4px 4px 0 var(--dark);
+}
+.svc-door:focus-visible {
+  outline: 4px solid var(--comic-red);
+  outline-offset: 4px;
+}
+
+.svc-door-icon {
+  grid-row: 1 / span 3;
+  font-size: 2rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--dark);
+  border-radius: 50%;
+  background: var(--dark);
+  color: var(--comic-yellow);
+}
+.svc-door--build .svc-door-icon { color: var(--comic-yellow); }
+
+.svc-door-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  letter-spacing: 1px;
+  line-height: 1.05;
+}
+.svc-door-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 34ch;
+}
+.svc-door-go {
+  margin-top: 0.4rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-bottom: 3px solid currentColor;
+  width: fit-content;
+}
+
+/* ---------- APEX tutoring sheet ---------- */
+.apex-wrap {
+  max-width: 980px;
+  margin: 0 auto 5rem;
+  padding: 1.5rem 0.5rem 0;
+  scroll-margin-top: 90px;
+}
+
+.apex-sheet {
+  position: relative;
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid var(--dark);
+  box-shadow: 10px 10px 0 var(--dark);
+  padding: clamp(1.75rem, 4vw, 3.25rem) clamp(1.25rem, 4.5vw, 3.75rem);
+  transform: rotate(-0.6deg);
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+/* masking tape holding the poster to the comic page */
+.apex-tape {
+  position: absolute;
+  top: -16px;
+  width: 120px;
+  height: 32px;
+  background: rgba(255, 215, 0, 0.72);
+  border-left: 2px dashed rgba(26, 41, 18, 0.25);
+  border-right: 2px dashed rgba(26, 41, 18, 0.25);
+}
+.apex-tape--left  { left: 8%;  transform: rotate(-5deg); }
+.apex-tape--right { right: 8%; transform: rotate(4deg); }
+
+.apex-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.apex-kicker {
+  font-weight: 300;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  letter-spacing: 0.18em;
+  line-height: 1.55;
+  max-width: 19ch;
+  margin: 0.6rem 0 0;
+}
+.apex-brand {
+  margin: 0;
+  text-align: right;
+  line-height: 1;
+}
+.apex-word {
+  display: block;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(3.6rem, 9vw, 6.2rem);
+  letter-spacing: 0.02em;
+}
+.apex-sub {
+  display: block;
+  font-weight: 300;
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  letter-spacing: 0.32em;
+  margin-top: 0.35rem;
+}
+
+.apex-intro {
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 58ch;
+  margin: 2rem auto 2rem;
+}
+
+.apex-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 2.5rem;
+  border-top: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+  padding: 1.75rem 0;
+}
+
+.apex-h {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.8rem;
+}
+
+.apex-subjects {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+}
+.apex-subjects li {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  padding: 0.15rem 0;
+}
+.apex-subjects li::before {
+  content: '';
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
+  background: var(--ink);
+  border-radius: 50%;
+  margin-right: 0.8em;
+  vertical-align: middle;
+}
+
+.apex-icons {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+.apex-icons svg {
+  width: 46px;
+  height: 46px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.apex-formula {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+.apex-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+  line-height: 1.25;
+}
+.apex-frac span:first-child { border-bottom: 2px solid var(--ink); padding: 0 0.2rem; }
+
+/* booking builder */
+.apex-book {
+  border-left: 2px dashed rgba(22, 22, 22, 0.35);
+  padding-left: 2.5rem;
+}
+.apex-form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 0.85rem;
+}
+.apex-form legend {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.4rem;
+  padding: 0;
+}
+.apex-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.apex-chips label { position: relative; cursor: pointer; }
+.apex-chips input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.apex-chips span {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  background: var(--paper);
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.apex-chips input:checked + span {
+  background: var(--ink);
+  color: var(--paper);
+}
+.apex-chips input:focus-visible + span {
+  outline: 3px solid var(--comic-red);
+  outline-offset: 2px;
+}
+
+.apex-quote {
+  font-size: 1.05rem;
+  margin: 1.1rem 0 0.8rem;
+}
+.apex-quote strong {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  font-size: 2.1rem;
+  letter-spacing: 0.01em;
+}
+
+.apex-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.9rem 1.4rem;
+  border: 3px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--comic-yellow), 5px 5px 0 3px var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.apex-cta i { font-size: 1.3rem; color: var(--wa); }
+.apex-cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--comic-yellow), 7px 7px 0 3px var(--ink);
+}
+.apex-cta:focus-visible { outline: 3px solid var(--comic-red); outline-offset: 4px; }
+
+.apex-prices {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: start;
+  gap: 4rem;
+  align-items: end;
+  padding-top: 1.75rem;
+}
+.apex-price { display: flex; flex-direction: column; }
+.apex-from {
+  font-size: 1.1rem;
+  letter-spacing: 0.22em;
+  font-weight: 400;
+}
+.apex-amount {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.apex-amount small { font-size: 0.55em; }
+.apex-for {
+  font-size: 0.92rem;
+  margin-top: 0.4rem;
+  letter-spacing: 0.04em;
+}
+.apex-modes { margin-top: 1.75rem; }
+.apex-modes p { margin: 0; line-height: 1.7; letter-spacing: 0.04em; }
+
+.apex-proof {
+  margin: 1.75rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(22, 22, 22, 0.25);
+  font-size: 0.92rem;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ---------- Build packages ---------- */
+.build-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  scroll-margin-top: 90px;
+}
+.build-head { text-align: center; margin-bottom: 2.25rem; }
+.build-title {
+  font-family: 'Bangers', cursive;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  letter-spacing: 2px;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.1;
+}
+.build-lede {
+  font-size: 1.1rem;
+  max-width: 62ch;
+  margin: 0.5rem auto 0;
+}
+
+.build-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+  align-items: stretch;
+}
+
+.tier {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fffdf6;
+  border: 3px solid var(--dark);
+  border-radius: 14px;
+  box-shadow: 6px 6px 0 var(--dark);
+  padding: 1.75rem 1.5rem 1.5rem;
+}
+.tier--popular {
+  background: #fff6c4;
+  border-width: 4px;
+  box-shadow: 9px 9px 0 var(--dark);
+  transform: translateY(-10px);
+}
+
+.tier-sticker {
+  position: absolute;
+  top: -20px;
+  right: -12px;
+  background: var(--comic-red);
+  color: #fff;
+  font-family: 'Bangers', cursive;
+  font-size: 1.25rem;
+  letter-spacing: 1.5px;
+  padding: 0.35rem 1rem;
+  border: 3px solid var(--dark);
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 var(--dark);
+  transform: rotate(5deg);
+}
+
+.tier-name {
+  font-family: 'Bangers', cursive;
+  font-size: 1.9rem;
+  letter-spacing: 1.5px;
+  margin: 0;
+  color: var(--primary);
+  line-height: 1;
+}
+.tier-price {
+  font-family: 'Bangers', cursive;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin: 0.4rem 0 0.3rem;
+  line-height: 1;
+  color: var(--dark);
+}
+.tier-from {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  vertical-align: middle;
+  margin-right: 0.15rem;
+}
+.tier-price--quote { font-size: 2.5rem; }
+.tier-for {
+  font-size: 0.97rem;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  min-height: 3em;
+}
+.tier-list {
+  list-style: none;
+  padding: 1rem 0 0;
+  margin: 0 0 1.5rem;
+  border-top: 2px dashed rgba(26, 41, 18, 0.3);
+  flex: 1;
+}
+.tier-list li {
+  position: relative;
+  padding: 0.3rem 0 0.3rem 1.7rem;
+  font-size: 0.97rem;
+  line-height: 1.45;
+}
+.tier-list li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  color: var(--primary);
+}
+.tier-list em { font-style: normal; font-weight: 600; word-break: break-word; }
+
+.tier-cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.02rem;
+  padding: 0.85rem 1rem;
+  border: 3px solid var(--dark);
+  border-radius: 10px;
+  background: var(--dark);
+  color: var(--comic-yellow);
+  box-shadow: 4px 4px 0 rgba(26, 41, 18, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.tier-cta i { font-size: 1.25rem; }
+.tier--popular .tier-cta {
+  background: var(--comic-red);
+  color: #fff;
+  box-shadow: 4px 4px 0 var(--dark);
+}
+.tier-cta:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--dark); }
+.tier-cta:focus-visible { outline: 3px solid var(--comic-red); outline-offset: 3px; }
+
+.build-unsure {
+  margin: 2.5rem auto 0;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: var(--paper);
+  border: 3px dashed var(--dark);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+}
+.build-unsure p { margin: 0; font-size: 1.02rem; line-height: 1.5; }
+.unsure-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--dark);
+  background: var(--comic-yellow);
+  border: 3px solid var(--dark);
+  border-radius: 10px;
+  padding: 0.7rem 1.1rem;
+  box-shadow: 4px 4px 0 var(--dark);
+}
+.unsure-cta i { font-size: 1.2rem; color: var(--wa-dark); }
+.unsure-cta:focus-visible { outline: 3px solid var(--comic-red); outline-offset: 3px; }
+
+.build-fine {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin: 1.25rem 0 0;
+}
+
+/* ---------- Floating WhatsApp button ---------- */
+.wa-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--wa);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.75rem 1.15rem 0.75rem 0.85rem;
+  border: 3px solid var(--dark);
+  border-radius: 999px;
+  box-shadow: 5px 5px 0 var(--dark);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.wa-float i { font-size: 1.7rem; }
+.wa-float:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--dark); }
+.wa-float:focus-visible { outline: 3px solid var(--comic-yellow); outline-offset: 3px; }
+
+/* "See all projects" link under featured projects */
+.projects-more {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .build-tiers { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+  .tier--popular { transform: none; }
+  .tier-for { min-height: 0; }
+  .apex-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .apex-book { border-left: 0; padding-left: 0; border-top: 2px dashed rgba(22,22,22,.35); padding-top: 1.5rem; }
+  .apex-prices { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+}
+
+@media (max-width: 700px) {
+  .svc-doors { grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 3.5rem; }
+  .svc-door { padding: 1.25rem; }
+  .apex-sheet { transform: none; box-shadow: 6px 6px 0 var(--dark); }
+  .apex-head { flex-direction: column-reverse; gap: 1rem; }
+  .apex-brand { text-align: left; }
+  .apex-kicker { max-width: none; letter-spacing: 0.12em; }
+  .apex-intro { text-align: left; margin: 1.5rem 0; }
+  .build-unsure { flex-direction: column; align-items: flex-start; }
+  .wa-float span { display: none; }
+  .wa-float { padding: 0.75rem; }
+  .wa-float i { font-size: 1.9rem; }
+}
+
+@media (max-width: 400px) {
+  .apex-prices { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svc-door, .tier-cta, .apex-cta, .wa-float, .apex-chips span { transition: none; }
+}
+
+#services { scroll-margin-top: 70px; }
